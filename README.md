@@ -1,5 +1,5 @@
 # SGL
-A Simple Graphing Library for .NET beginners, meant for creating simple and fun little applications by using mathematical primitives.
+A Simple Graphing Library for creating simple and fun little applications by using mathematical primitives.
 
 See the [official documentation](https://veselink1.github.io/SGL-Docs/annotated.html) for more information.
 
@@ -31,7 +31,7 @@ class Program
 {
   static void Main(string[] args)
   {
-    var w = new Window(range: 5, title: "My Graph");
+    var g = new Window(range: 5, title: "My Graph");
     g.StrokeColor = Colors.Indigo;
     
     g.Draw(x => Math.Sin(x));
