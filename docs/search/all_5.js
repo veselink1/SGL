@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['fontsize',['FontSize',['../class_s_g_l_1_1_graph.html#a466dbe496c87ac50283ee68af38ec98f',1,'SGL::Graph']]]
+  ['fontsize',['FontSize',['../class_s_g_l_1_1_window.html#ad56523346c8773730d1b46875b24b115',1,'SGL::Window']]]
 ];

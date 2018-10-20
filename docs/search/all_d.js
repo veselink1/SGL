@@ -1,13 +1,13 @@
 var searchData=
 [
-  ['range',['Range',['../class_s_g_l_1_1_graph.html#a9f890698937c413d4892d7ad7e674f15',1,'SGL::Graph']]],
-  ['readdouble',['ReadDouble',['../class_s_g_l_1_1_graph.html#ab84327403a05e999998f54b1bc4d1c35',1,'SGL::Graph']]],
-  ['readfloat',['ReadFloat',['../class_s_g_l_1_1_graph.html#aa9d57659823175542533c9cceeeb1ff6',1,'SGL::Graph']]],
-  ['readint',['ReadInt',['../class_s_g_l_1_1_graph.html#a4162119a26ba960884e3660c0750d14c',1,'SGL::Graph']]],
-  ['readlong',['ReadLong',['../class_s_g_l_1_1_graph.html#aa55701744ab9d06019ff60e4d2da0a16',1,'SGL::Graph']]],
-  ['readstring',['ReadString',['../class_s_g_l_1_1_graph.html#a25db2a007fb5adaa390a44f16d4d653e',1,'SGL::Graph']]],
-  ['rectangle',['Rectangle',['../class_s_g_l_1_1_rectangle.html',1,'SGL']]],
-  ['right',['Right',['../struct_s_g_l_1_1_point.html#a320d6bfd5119b652d958b5f72e2f737c',1,'SGL.Point.Right()'],['../class_s_g_l_1_1_rectangle.html#aa0621bfad6df85f84708d730f232d721',1,'SGL.Rectangle.Right()']]],
-  ['rx',['RX',['../class_s_g_l_1_1_ellipse.html#ac6630cfb928ba11742a1efefe7ed41ca',1,'SGL::Ellipse']]],
-  ['ry',['RY',['../class_s_g_l_1_1_ellipse.html#af1df83b66e02fb6ebf969e608fc018d9',1,'SGL::Ellipse']]]
+  ['selectindex_3c_20t_20_3e',['SelectIndex&lt; T &gt;',['../class_s_g_l_1_1_window.html#a177a018a7d130bacb71c6143dd8056f0',1,'SGL::Window']]],
+  ['selectitem_3c_20t_20_3e',['SelectItem&lt; T &gt;',['../class_s_g_l_1_1_window.html#a43317b529e80e8caae44d1ac9802c722',1,'SGL::Window']]],
+  ['selectpoint',['SelectPoint',['../class_s_g_l_1_1_window.html#af32075c0c1e48e58ae837ba2833c2829',1,'SGL::Window']]],
+  ['sgl',['SGL',['../namespace_s_g_l.html',1,'']]],
+  ['shapefill',['ShapeFill',['../class_s_g_l_1_1_window.html#a85e33e0c5aae9a98f4f512ea4982b9cd',1,'SGL::Window']]],
+  ['show',['Show',['../class_s_g_l_1_1_window.html#a364b2c6253eae2dc1aa6d3d0bb24ee1c',1,'SGL::Window']]],
+  ['showconsole',['ShowConsole',['../class_s_g_l_1_1_window.html#a587319f0306051c5e5ffa4eb3a049330',1,'SGL::Window']]],
+  ['start',['Start',['../class_s_g_l_1_1_line.html#ad062108c742ed94352ffbd24153e7125',1,'SGL::Line']]],
+  ['strokecolor',['StrokeColor',['../class_s_g_l_1_1_window.html#ad9930e0e8c633a1235c68b827e884aff',1,'SGL::Window']]],
+  ['strokethickness',['StrokeThickness',['../class_s_g_l_1_1_window.html#ad083830df0d777572e1ad7943cd53b95',1,'SGL::Window']]]
 ];

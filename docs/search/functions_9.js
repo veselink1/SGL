@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['readdouble',['ReadDouble',['../class_s_g_l_1_1_graph.html#ab84327403a05e999998f54b1bc4d1c35',1,'SGL::Graph']]],
-  ['readfloat',['ReadFloat',['../class_s_g_l_1_1_graph.html#aa9d57659823175542533c9cceeeb1ff6',1,'SGL::Graph']]],
-  ['readint',['ReadInt',['../class_s_g_l_1_1_graph.html#a4162119a26ba960884e3660c0750d14c',1,'SGL::Graph']]],
-  ['readlong',['ReadLong',['../class_s_g_l_1_1_graph.html#aa55701744ab9d06019ff60e4d2da0a16',1,'SGL::Graph']]],
-  ['readstring',['ReadString',['../class_s_g_l_1_1_graph.html#a25db2a007fb5adaa390a44f16d4d653e',1,'SGL::Graph']]]
+  ['selectindex_3c_20t_20_3e',['SelectIndex&lt; T &gt;',['../class_s_g_l_1_1_window.html#a177a018a7d130bacb71c6143dd8056f0',1,'SGL::Window']]],
+  ['selectitem_3c_20t_20_3e',['SelectItem&lt; T &gt;',['../class_s_g_l_1_1_window.html#a43317b529e80e8caae44d1ac9802c722',1,'SGL::Window']]],
+  ['selectpoint',['SelectPoint',['../class_s_g_l_1_1_window.html#af32075c0c1e48e58ae837ba2833c2829',1,'SGL::Window']]],
+  ['show',['Show',['../class_s_g_l_1_1_window.html#a364b2c6253eae2dc1aa6d3d0bb24ee1c',1,'SGL::Window']]],
+  ['showconsole',['ShowConsole',['../class_s_g_l_1_1_window.html#a587319f0306051c5e5ffa4eb3a049330',1,'SGL::Window']]]
 ];

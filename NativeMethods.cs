@@ -25,7 +25,7 @@ namespace SGL
         [DllImport("user32.dll")]
         internal static extern int SetWindowLong(IntPtr hWnd, int nIndex, int dwNewLong);
 
-        internal static void HideCloseButton(Window window)
+        internal static void HideCloseButton(System.Windows.Window window)
         {
             var hWnd = new WindowInteropHelper(window).Handle;
             SetWindowLong(hWnd, GWL_STYLE, GetWindowLong(hWnd, GWL_STYLE) & ~WS_SYSMENU);

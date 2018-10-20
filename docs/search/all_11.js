@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['waitforexit',['WaitForExit',['../class_s_g_l_1_1_graph.html#a6b99d7fed85538b0dd5906e359fcf9c0',1,'SGL::Graph']]],
-  ['waitforseconds',['WaitForSeconds',['../class_s_g_l_1_1_graph.html#aac0d51ab73e1f78788e9ecb6afc9d532',1,'SGL::Graph']]],
-  ['waitforupdate',['WaitForUpdate',['../class_s_g_l_1_1_graph.html#ab4b0c60affd657436340a67b2e9ac2bd',1,'SGL::Graph']]],
-  ['width',['Width',['../class_s_g_l_1_1_rectangle.html#a717f64d0b1a88f2901ebb53bf5fdac72',1,'SGL::Rectangle']]]
+  ['x',['X',['../class_s_g_l_1_1_ellipse.html#a79ef810cf7ed8d3911da64df3c846869',1,'SGL.Ellipse.X()'],['../class_s_g_l_1_1_label.html#adfba11f4ead1d6dd29785a7530acfca0',1,'SGL.Label.X()']]],
+  ['x1',['X1',['../class_s_g_l_1_1_line.html#a4485492024fc96d2db3aa34d699f974e',1,'SGL::Line']]],
+  ['x2',['X2',['../class_s_g_l_1_1_line.html#ab6dcb09fcf8983e99c5230d4321bbfc8',1,'SGL::Line']]]
 ];

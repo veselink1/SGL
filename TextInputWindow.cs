@@ -5,7 +5,7 @@ using System.Windows.Media;
 
 namespace SGL
 {
-    internal class TextInputWindow : Window
+    internal class TextInputWindow : System.Windows.Window
     {
         private TextBox _textBox;
         public string Text => _textBox.Text;

@@ -1,0 +1,170 @@
+\hypertarget{class_s_g_l_1_1_line}{}\section{S\+G\+L.\+Line Class Reference}
+\label{class_s_g_l_1_1_line}\index{S\+G\+L.\+Line@{S\+G\+L.\+Line}}
+
+
+Represent a line defined by two points.  
+
+
+Inheritance diagram for S\+G\+L.\+Line\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_s_g_l_1_1_line}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_s_g_l_1_1_line_a8223479d92d17240ca099e57a3db2fb8}{Line}} (double x1, double y1, double x2, double y2)
+\begin{DoxyCompactList}\small\item\em Creates a line between the two points. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_s_g_l_1_1_line_aa8638f980f735da597505f73105c8b44}{Line}} (\mbox{\hyperlink{struct_s_g_l_1_1_point}{Point}} a, \mbox{\hyperlink{struct_s_g_l_1_1_point}{Point}} b)
+\begin{DoxyCompactList}\small\item\em Creates a line between the two points. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_g_l_1_1_line_a843197ff24817c39a8640ef6a0fce6a6}\label{class_s_g_l_1_1_line_a843197ff24817c39a8640ef6a0fce6a6}} 
+bool {\bfseries Equals} (\mbox{\hyperlink{class_s_g_l_1_1_line}{Line}} other)
+\item 
+\mbox{\Hypertarget{class_s_g_l_1_1_line_ac22009bbb59798ccdc5d456e8f460687}\label{class_s_g_l_1_1_line_ac22009bbb59798ccdc5d456e8f460687}} 
+override bool {\bfseries Equals} (object obj)
+\item 
+\mbox{\Hypertarget{class_s_g_l_1_1_line_a0e1a9dfda6f68cc061f55d64364cde9c}\label{class_s_g_l_1_1_line_a0e1a9dfda6f68cc061f55d64364cde9c}} 
+override int {\bfseries Get\+Hash\+Code} ()
+\item 
+\mbox{\Hypertarget{class_s_g_l_1_1_line_a10d26aa2ac7871020125a44032600455}\label{class_s_g_l_1_1_line_a10d26aa2ac7871020125a44032600455}} 
+override string {\bfseries To\+String} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_s_g_l_1_1_line_a96549db302566a0e3e9d893c520edcb4}\label{class_s_g_l_1_1_line_a96549db302566a0e3e9d893c520edcb4}} 
+static bool {\bfseries operator==} (\mbox{\hyperlink{class_s_g_l_1_1_line}{Line}} a, \mbox{\hyperlink{class_s_g_l_1_1_line}{Line}} b)
+\item 
+\mbox{\Hypertarget{class_s_g_l_1_1_line_a098603498d14698cac23a2d1daea73f8}\label{class_s_g_l_1_1_line_a098603498d14698cac23a2d1daea73f8}} 
+static bool {\bfseries operator!=} (\mbox{\hyperlink{class_s_g_l_1_1_line}{Line}} a, \mbox{\hyperlink{class_s_g_l_1_1_line}{Line}} b)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_s_g_l_1_1_line_a58ee417f43a6acd3b7c4f00c190c26fa}{Length}} =$>$ \mbox{\hyperlink{struct_s_g_l_1_1_point_a88dc45979fe8192615705469fc12f18b}{Point.\+Distance}}(\mbox{\hyperlink{class_s_g_l_1_1_line_a4485492024fc96d2db3aa34d699f974e}{X1}}, \mbox{\hyperlink{class_s_g_l_1_1_line_a1875f7240fd5be5323aaef118c9308c0}{Y1}}, \mbox{\hyperlink{class_s_g_l_1_1_line_ab6dcb09fcf8983e99c5230d4321bbfc8}{X2}}, \mbox{\hyperlink{class_s_g_l_1_1_line_af3571b932c09f78f70e288770e266341}{Y2}})
+\begin{DoxyCompactList}\small\item\em Calculates the distance between the two ends of the line. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_s_g_l_1_1_point}{Point}} \mbox{\hyperlink{class_s_g_l_1_1_line_ad062108c742ed94352ffbd24153e7125}{Start}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The starting point of the line. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_s_g_l_1_1_point}{Point}} \mbox{\hyperlink{class_s_g_l_1_1_line_a6b6a840b2b8ce27ed017946da182a10e}{End}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The ending point of the line. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_s_g_l_1_1_line_a4485492024fc96d2db3aa34d699f974e}{X1}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The X coordinate of the starting point. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_s_g_l_1_1_line_ab6dcb09fcf8983e99c5230d4321bbfc8}{X2}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The X coordinate of the ending point. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_s_g_l_1_1_line_a1875f7240fd5be5323aaef118c9308c0}{Y1}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The Y coordinate of the starting point. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_s_g_l_1_1_line_af3571b932c09f78f70e288770e266341}{Y2}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The Y coordinate of the ending point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represent a line defined by two points. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_s_g_l_1_1_line_a8223479d92d17240ca099e57a3db2fb8}\label{class_s_g_l_1_1_line_a8223479d92d17240ca099e57a3db2fb8}} 
+\index{S\+G\+L\+::\+Line@{S\+G\+L\+::\+Line}!Line@{Line}}
+\index{Line@{Line}!S\+G\+L\+::\+Line@{S\+G\+L\+::\+Line}}
+\subsubsection{\texorpdfstring{Line()}{Line()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily S\+G\+L.\+Line.\+Line (\begin{DoxyParamCaption}\item[{double}]{x1,  }\item[{double}]{y1,  }\item[{double}]{x2,  }\item[{double}]{y2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates a line between the two points. 
+
+\mbox{\Hypertarget{class_s_g_l_1_1_line_aa8638f980f735da597505f73105c8b44}\label{class_s_g_l_1_1_line_aa8638f980f735da597505f73105c8b44}} 
+\index{S\+G\+L\+::\+Line@{S\+G\+L\+::\+Line}!Line@{Line}}
+\index{Line@{Line}!S\+G\+L\+::\+Line@{S\+G\+L\+::\+Line}}
+\subsubsection{\texorpdfstring{Line()}{Line()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily S\+G\+L.\+Line.\+Line (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_g_l_1_1_point}{Point}}}]{a,  }\item[{\mbox{\hyperlink{struct_s_g_l_1_1_point}{Point}}}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates a line between the two points. 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_s_g_l_1_1_line_a58ee417f43a6acd3b7c4f00c190c26fa}\label{class_s_g_l_1_1_line_a58ee417f43a6acd3b7c4f00c190c26fa}} 
+\index{S\+G\+L\+::\+Line@{S\+G\+L\+::\+Line}!Length@{Length}}
+\index{Length@{Length}!S\+G\+L\+::\+Line@{S\+G\+L\+::\+Line}}
+\subsubsection{\texorpdfstring{Length}{Length}}
+{\footnotesize\ttfamily double S\+G\+L.\+Line.\+Length =$>$ \mbox{\hyperlink{struct_s_g_l_1_1_point_a88dc45979fe8192615705469fc12f18b}{Point.\+Distance}}(\mbox{\hyperlink{class_s_g_l_1_1_line_a4485492024fc96d2db3aa34d699f974e}{X1}}, \mbox{\hyperlink{class_s_g_l_1_1_line_a1875f7240fd5be5323aaef118c9308c0}{Y1}}, \mbox{\hyperlink{class_s_g_l_1_1_line_ab6dcb09fcf8983e99c5230d4321bbfc8}{X2}}, \mbox{\hyperlink{class_s_g_l_1_1_line_af3571b932c09f78f70e288770e266341}{Y2}})}
+
+
+
+Calculates the distance between the two ends of the line. 
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_s_g_l_1_1_line_a6b6a840b2b8ce27ed017946da182a10e}\label{class_s_g_l_1_1_line_a6b6a840b2b8ce27ed017946da182a10e}} 
+\index{S\+G\+L\+::\+Line@{S\+G\+L\+::\+Line}!End@{End}}
+\index{End@{End}!S\+G\+L\+::\+Line@{S\+G\+L\+::\+Line}}
+\subsubsection{\texorpdfstring{End}{End}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_s_g_l_1_1_point}{Point}} S\+G\+L.\+Line.\+End\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The ending point of the line. 
+
+\mbox{\Hypertarget{class_s_g_l_1_1_line_ad062108c742ed94352ffbd24153e7125}\label{class_s_g_l_1_1_line_ad062108c742ed94352ffbd24153e7125}} 
+\index{S\+G\+L\+::\+Line@{S\+G\+L\+::\+Line}!Start@{Start}}
+\index{Start@{Start}!S\+G\+L\+::\+Line@{S\+G\+L\+::\+Line}}
+\subsubsection{\texorpdfstring{Start}{Start}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_s_g_l_1_1_point}{Point}} S\+G\+L.\+Line.\+Start\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The starting point of the line. 
+
+\mbox{\Hypertarget{class_s_g_l_1_1_line_a4485492024fc96d2db3aa34d699f974e}\label{class_s_g_l_1_1_line_a4485492024fc96d2db3aa34d699f974e}} 
+\index{S\+G\+L\+::\+Line@{S\+G\+L\+::\+Line}!X1@{X1}}
+\index{X1@{X1}!S\+G\+L\+::\+Line@{S\+G\+L\+::\+Line}}
+\subsubsection{\texorpdfstring{X1}{X1}}
+{\footnotesize\ttfamily double S\+G\+L.\+Line.\+X1\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The X coordinate of the starting point. 
+
+\mbox{\Hypertarget{class_s_g_l_1_1_line_ab6dcb09fcf8983e99c5230d4321bbfc8}\label{class_s_g_l_1_1_line_ab6dcb09fcf8983e99c5230d4321bbfc8}} 
+\index{S\+G\+L\+::\+Line@{S\+G\+L\+::\+Line}!X2@{X2}}
+\index{X2@{X2}!S\+G\+L\+::\+Line@{S\+G\+L\+::\+Line}}
+\subsubsection{\texorpdfstring{X2}{X2}}
+{\footnotesize\ttfamily double S\+G\+L.\+Line.\+X2\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The X coordinate of the ending point. 
+
+\mbox{\Hypertarget{class_s_g_l_1_1_line_a1875f7240fd5be5323aaef118c9308c0}\label{class_s_g_l_1_1_line_a1875f7240fd5be5323aaef118c9308c0}} 
+\index{S\+G\+L\+::\+Line@{S\+G\+L\+::\+Line}!Y1@{Y1}}
+\index{Y1@{Y1}!S\+G\+L\+::\+Line@{S\+G\+L\+::\+Line}}
+\subsubsection{\texorpdfstring{Y1}{Y1}}
+{\footnotesize\ttfamily double S\+G\+L.\+Line.\+Y1\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The Y coordinate of the starting point. 
+
+\mbox{\Hypertarget{class_s_g_l_1_1_line_af3571b932c09f78f70e288770e266341}\label{class_s_g_l_1_1_line_af3571b932c09f78f70e288770e266341}} 
+\index{S\+G\+L\+::\+Line@{S\+G\+L\+::\+Line}!Y2@{Y2}}
+\index{Y2@{Y2}!S\+G\+L\+::\+Line@{S\+G\+L\+::\+Line}}
+\subsubsection{\texorpdfstring{Y2}{Y2}}
+{\footnotesize\ttfamily double S\+G\+L.\+Line.\+Y2\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The Y coordinate of the ending point. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Line.\+cs\end{DoxyCompactItemize}

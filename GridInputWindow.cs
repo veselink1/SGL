@@ -5,7 +5,7 @@ using System.Windows.Media;
 
 namespace SGL
 {
-    internal class GridInputWindow : Window
+    internal class GridInputWindow : System.Windows.Window
     {
         public int SelectedOptionIndex { get; private set; }
         public bool ClosedNormally { get; private set; }

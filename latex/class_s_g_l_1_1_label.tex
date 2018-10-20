@@ -1,0 +1,137 @@
+\hypertarget{class_s_g_l_1_1_label}{}\section{S\+G\+L.\+Label Class Reference}
+\label{class_s_g_l_1_1_label}\index{S\+G\+L.\+Label@{S\+G\+L.\+Label}}
+
+
+Represent some text on the graph, defined by an origin point and a text message.  
+
+
+Inheritance diagram for S\+G\+L.\+Label\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_s_g_l_1_1_label}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_s_g_l_1_1_label_a1be3c869e06d8fc2da560a4fec1be8fd}{Label}} (\mbox{\hyperlink{struct_s_g_l_1_1_point}{Point}} position, string text, \mbox{\hyperlink{namespace_s_g_l_aa8de446c655c151ef21cfe27b24da87c}{Alignment}} alignment=Alignment.\+Top)
+\begin{DoxyCompactList}\small\item\em Creates a label at the given position and with the given message and alignment. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_s_g_l_1_1_label_a11a9b6b3f98a52007ae874d22dc2f348}{Label}} (double x, double y, string text, \mbox{\hyperlink{namespace_s_g_l_aa8de446c655c151ef21cfe27b24da87c}{Alignment}} alignment=Alignment.\+Top)
+\begin{DoxyCompactList}\small\item\em Creates a label at the given position and with the given message and alignment. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_g_l_1_1_label_a68959b0181bc08450c2a5ba1a30df705}\label{class_s_g_l_1_1_label_a68959b0181bc08450c2a5ba1a30df705}} 
+bool {\bfseries Equals} (\mbox{\hyperlink{class_s_g_l_1_1_label}{Label}} other)
+\item 
+\mbox{\Hypertarget{class_s_g_l_1_1_label_ab1f388c98f9e912195411337f7287c3c}\label{class_s_g_l_1_1_label_ab1f388c98f9e912195411337f7287c3c}} 
+override bool {\bfseries Equals} (object obj)
+\item 
+\mbox{\Hypertarget{class_s_g_l_1_1_label_a256edbbb21ad2232fc73e2f7368b2b1d}\label{class_s_g_l_1_1_label_a256edbbb21ad2232fc73e2f7368b2b1d}} 
+override int {\bfseries Get\+Hash\+Code} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_s_g_l_1_1_label_acfdcba6284f755436274b8b02497731e}\label{class_s_g_l_1_1_label_acfdcba6284f755436274b8b02497731e}} 
+static bool {\bfseries operator==} (\mbox{\hyperlink{class_s_g_l_1_1_label}{Label}} a, \mbox{\hyperlink{class_s_g_l_1_1_label}{Label}} b)
+\item 
+\mbox{\Hypertarget{class_s_g_l_1_1_label_a33d5c6719db459ad98648c6a57bef735}\label{class_s_g_l_1_1_label_a33d5c6719db459ad98648c6a57bef735}} 
+static bool {\bfseries operator!=} (\mbox{\hyperlink{class_s_g_l_1_1_label}{Label}} a, \mbox{\hyperlink{class_s_g_l_1_1_label}{Label}} b)
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_s_g_l_1_1_label_adfba11f4ead1d6dd29785a7530acfca0}{X}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The X-\/coordinate of the label. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_s_g_l_1_1_label_a7c8067fe0098721a4a9cb6bd187e005d}{Y}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The Y-\/coordinate of the label. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_s_g_l_1_1_point}{Point}} \mbox{\hyperlink{class_s_g_l_1_1_label_a31dbcad567e6ef89d49f02eb55312308}{Position}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The position of the label. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_s_g_l_1_1_label_abc39b1a43ac82e057d716f3d2bc6056a}{Text}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The text content of the label. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_s_g_l_aa8de446c655c151ef21cfe27b24da87c}{Alignment}} \mbox{\hyperlink{class_s_g_l_1_1_label_a00910f48f4a61d787308b77341ba9bcc}{Alignment}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The alignment of the label relative to the point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represent some text on the graph, defined by an origin point and a text message. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_s_g_l_1_1_label_a1be3c869e06d8fc2da560a4fec1be8fd}\label{class_s_g_l_1_1_label_a1be3c869e06d8fc2da560a4fec1be8fd}} 
+\index{S\+G\+L\+::\+Label@{S\+G\+L\+::\+Label}!Label@{Label}}
+\index{Label@{Label}!S\+G\+L\+::\+Label@{S\+G\+L\+::\+Label}}
+\subsubsection{\texorpdfstring{Label()}{Label()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily S\+G\+L.\+Label.\+Label (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_g_l_1_1_point}{Point}}}]{position,  }\item[{string}]{text,  }\item[{\mbox{\hyperlink{namespace_s_g_l_aa8de446c655c151ef21cfe27b24da87c}{Alignment}}}]{alignment = {\ttfamily Alignment.Top} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates a label at the given position and with the given message and alignment. 
+
+\mbox{\Hypertarget{class_s_g_l_1_1_label_a11a9b6b3f98a52007ae874d22dc2f348}\label{class_s_g_l_1_1_label_a11a9b6b3f98a52007ae874d22dc2f348}} 
+\index{S\+G\+L\+::\+Label@{S\+G\+L\+::\+Label}!Label@{Label}}
+\index{Label@{Label}!S\+G\+L\+::\+Label@{S\+G\+L\+::\+Label}}
+\subsubsection{\texorpdfstring{Label()}{Label()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily S\+G\+L.\+Label.\+Label (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y,  }\item[{string}]{text,  }\item[{\mbox{\hyperlink{namespace_s_g_l_aa8de446c655c151ef21cfe27b24da87c}{Alignment}}}]{alignment = {\ttfamily Alignment.Top} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates a label at the given position and with the given message and alignment. 
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_s_g_l_1_1_label_a00910f48f4a61d787308b77341ba9bcc}\label{class_s_g_l_1_1_label_a00910f48f4a61d787308b77341ba9bcc}} 
+\index{S\+G\+L\+::\+Label@{S\+G\+L\+::\+Label}!Alignment@{Alignment}}
+\index{Alignment@{Alignment}!S\+G\+L\+::\+Label@{S\+G\+L\+::\+Label}}
+\subsubsection{\texorpdfstring{Alignment}{Alignment}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_s_g_l_aa8de446c655c151ef21cfe27b24da87c}{Alignment}} S\+G\+L.\+Label.\+Alignment\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The alignment of the label relative to the point. 
+
+\mbox{\Hypertarget{class_s_g_l_1_1_label_a31dbcad567e6ef89d49f02eb55312308}\label{class_s_g_l_1_1_label_a31dbcad567e6ef89d49f02eb55312308}} 
+\index{S\+G\+L\+::\+Label@{S\+G\+L\+::\+Label}!Position@{Position}}
+\index{Position@{Position}!S\+G\+L\+::\+Label@{S\+G\+L\+::\+Label}}
+\subsubsection{\texorpdfstring{Position}{Position}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_s_g_l_1_1_point}{Point}} S\+G\+L.\+Label.\+Position\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The position of the label. 
+
+\mbox{\Hypertarget{class_s_g_l_1_1_label_abc39b1a43ac82e057d716f3d2bc6056a}\label{class_s_g_l_1_1_label_abc39b1a43ac82e057d716f3d2bc6056a}} 
+\index{S\+G\+L\+::\+Label@{S\+G\+L\+::\+Label}!Text@{Text}}
+\index{Text@{Text}!S\+G\+L\+::\+Label@{S\+G\+L\+::\+Label}}
+\subsubsection{\texorpdfstring{Text}{Text}}
+{\footnotesize\ttfamily string S\+G\+L.\+Label.\+Text\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The text content of the label. 
+
+\mbox{\Hypertarget{class_s_g_l_1_1_label_adfba11f4ead1d6dd29785a7530acfca0}\label{class_s_g_l_1_1_label_adfba11f4ead1d6dd29785a7530acfca0}} 
+\index{S\+G\+L\+::\+Label@{S\+G\+L\+::\+Label}!X@{X}}
+\index{X@{X}!S\+G\+L\+::\+Label@{S\+G\+L\+::\+Label}}
+\subsubsection{\texorpdfstring{X}{X}}
+{\footnotesize\ttfamily double S\+G\+L.\+Label.\+X\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The X-\/coordinate of the label. 
+
+\mbox{\Hypertarget{class_s_g_l_1_1_label_a7c8067fe0098721a4a9cb6bd187e005d}\label{class_s_g_l_1_1_label_a7c8067fe0098721a4a9cb6bd187e005d}} 
+\index{S\+G\+L\+::\+Label@{S\+G\+L\+::\+Label}!Y@{Y}}
+\index{Y@{Y}!S\+G\+L\+::\+Label@{S\+G\+L\+::\+Label}}
+\subsubsection{\texorpdfstring{Y}{Y}}
+{\footnotesize\ttfamily double S\+G\+L.\+Label.\+Y\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The Y-\/coordinate of the label. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Label.\+cs\end{DoxyCompactItemize}

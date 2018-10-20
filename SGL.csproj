@@ -12,6 +12,8 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -52,7 +54,7 @@
   <ItemGroup>
     <Compile Include="Ellipse.cs" />
     <Compile Include="Utils.cs" />
-    <Compile Include="Graph.cs" />
+    <Compile Include="Window.cs" />
     <Compile Include="GridInputWindow.cs" />
     <Compile Include="Input.cs" />
     <Compile Include="Line.cs" />

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['graph',['Graph',['../class_s_g_l_1_1_graph.html#ae49041037b01a96e44314f7b3b9b6166',1,'SGL::Graph']]]
+  ['hide',['Hide',['../class_s_g_l_1_1_window.html#a5e91c8f7fec1242bd9f6fc9ce2d62155',1,'SGL::Window']]],
+  ['hideconsole',['HideConsole',['../class_s_g_l_1_1_window.html#a4d788e159f7eac419dee22c0057dcc9e',1,'SGL::Window']]]
 ];

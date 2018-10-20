@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['shapefill',['ShapeFill',['../class_s_g_l_1_1_graph.html#a14469c5ae5d52e1eec659f6800a36c37',1,'SGL::Graph']]],
+  ['shapefill',['ShapeFill',['../class_s_g_l_1_1_window.html#a85e33e0c5aae9a98f4f512ea4982b9cd',1,'SGL::Window']]],
   ['start',['Start',['../class_s_g_l_1_1_line.html#ad062108c742ed94352ffbd24153e7125',1,'SGL::Line']]],
-  ['strokecolor',['StrokeColor',['../class_s_g_l_1_1_graph.html#af81e9aa32beac23df901a2483d0064d2',1,'SGL::Graph']]],
-  ['strokethickness',['StrokeThickness',['../class_s_g_l_1_1_graph.html#a40051c7b2a49c71f4dad7fef5b1e44ef',1,'SGL::Graph']]]
+  ['strokecolor',['StrokeColor',['../class_s_g_l_1_1_window.html#ad9930e0e8c633a1235c68b827e884aff',1,'SGL::Window']]],
+  ['strokethickness',['StrokeThickness',['../class_s_g_l_1_1_window.html#ad083830df0d777572e1ad7943cd53b95',1,'SGL::Window']]]
 ];

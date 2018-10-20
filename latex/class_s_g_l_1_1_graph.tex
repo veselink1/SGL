@@ -1,0 +1,650 @@
+\hypertarget{class_s_g_l_1_1_graph}{}\section{S\+G\+L.\+Graph Class Reference}
+\label{class_s_g_l_1_1_graph}\index{S\+G\+L.\+Graph@{S\+G\+L.\+Graph}}
+
+
+A graphical chart that is shown in a separate window.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_s_g_l_1_1_graph_ae49041037b01a96e44314f7b3b9b6166}{Graph}} (double range, string title=\char`\"{}Main Window\char`\"{}, double width=800, double height=640)
+\begin{DoxyCompactList}\small\item\em Creates a new empty chart window. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_s_g_l_1_1_graph_aba994e0f4ec93be3f3d181fa128db070}{Is\+Key\+Down}} (Key key)
+\begin{DoxyCompactList}\small\item\em Checks if the specified key is currently pressed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_s_g_l_1_1_graph_a274ab575056c833cd3f3f45770c20b58}{Is\+Mouse\+Button\+Down}} (Mouse\+Button button)
+\begin{DoxyCompactList}\small\item\em Checks if the specified mouse button is currently pressed. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_s_g_l_1_1_point}{Point}} \mbox{\hyperlink{class_s_g_l_1_1_graph_a02daa8a4a7e540677d76e9a0ac40039d}{Select\+Point}} ()
+\begin{DoxyCompactList}\small\item\em Asks the user to select a point on the chart and returns the coordinates of that point. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_s_g_l_1_1_graph_ac67339a4d4304b41258344692535c139}{Show}} ()
+\begin{DoxyCompactList}\small\item\em Shows the window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_s_g_l_1_1_graph_ad01766cdde14e9f9bcae84caa9d5351d}{Hide}} ()
+\begin{DoxyCompactList}\small\item\em Hides the window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_s_g_l_1_1_graph_ab39ea13f352304658601da75c8207b08}{Close}} ()
+\begin{DoxyCompactList}\small\item\em Closes the window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_s_g_l_1_1_graph_ad1f5ca5a92e9a3c788178e44d65ba005}{Clear}} ()
+\begin{DoxyCompactList}\small\item\em Clears the content of the chart. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_s_g_l_1_1_graph_a6b99d7fed85538b0dd5906e359fcf9c0}{Wait\+For\+Exit}} ()
+\begin{DoxyCompactList}\small\item\em Waits for the user to manually close the window. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_s_g_l_1_1_graph_a4162119a26ba960884e3660c0750d14c}{Read\+Int}} (string message=\char`\"{}Please, enter an integer.\char`\"{}, int default\+Value=0)
+\begin{DoxyCompactList}\small\item\em Reads a 32-\/bit integer from the user through a graphical prompt. \end{DoxyCompactList}\item 
+long \mbox{\hyperlink{class_s_g_l_1_1_graph_aa55701744ab9d06019ff60e4d2da0a16}{Read\+Long}} (string message=\char`\"{}Please, enter an integer.\char`\"{}, long default\+Value=0)
+\begin{DoxyCompactList}\small\item\em Reads a 64-\/bit integer from the user through a graphical prompt. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_s_g_l_1_1_graph_aa9d57659823175542533c9cceeeb1ff6}{Read\+Float}} (string message=\char`\"{}Please, enter a number.\char`\"{}, float default\+Value=0f)
+\begin{DoxyCompactList}\small\item\em Reads a 32-\/bit floating point number from the user through a graphical prompt. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_s_g_l_1_1_graph_ab84327403a05e999998f54b1bc4d1c35}{Read\+Double}} (string message=\char`\"{}Please, enter a number.\char`\"{}, double default\+Value=0.\+0)
+\begin{DoxyCompactList}\small\item\em Reads a 64-\/bit floating point number from the user through a graphical prompt. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_s_g_l_1_1_graph_a25db2a007fb5adaa390a44f16d4d653e}{Read\+String}} (string message=\char`\"{}Please, enter some text.\char`\"{}, string default\+Value=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Reads a string from the user through a graphical prompt. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_s_g_l_1_1_graph_add2e8a9bb0b5174fc9a80e21b7d407e8}{Yes\+Or\+No}} (string message, bool default\+Value=true)
+\begin{DoxyCompactList}\small\item\em Asks the user a questing and allows them to answer it with yer (true) or no (false) through a graphical prompt. \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{class_s_g_l_1_1_graph_a482da34c25dc49ec1fe1aed288d2807a}{Select\+Item$<$ T $>$}} (string message, T\mbox{[}$\,$\mbox{]} options, int default\+Index=-\/1)
+\begin{DoxyCompactList}\small\item\em Asks the user to select an item from the list and returns the selected item. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_s_g_l_1_1_graph_ab1d2be74da25ee0a40829993a2f597c4}{Select\+Index$<$ T $>$}} (string message, T\mbox{[}$\,$\mbox{]} options, int default\+Index=-\/1)
+\begin{DoxyCompactList}\small\item\em Asks the user to select an item from the list and returns the selected item. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_s_g_l_1_1_graph_a16bfdc1d809835f73bd9870af125b161}{Notify}} (string message)
+\begin{DoxyCompactList}\small\item\em Shows a message to the user. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_s_g_l_1_1_graph_acdd26dba75282796ec6d22b5be177b7e}{Draw}} (Func$<$ double, double $>$ f, double start=double.\+Min\+Value, double end=double.\+Max\+Value)
+\begin{DoxyCompactList}\small\item\em Adds the graph of a function to the chart. The start and end of the values along the X-\/axis can also be specified. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_s_g_l_1_1_graph_ae56a2ac44e31ab8e8dae5dc042e8515d}{Erase}} (Func$<$ double, double $>$ f, double start=double.\+Min\+Value, double end=double.\+Max\+Value)
+\begin{DoxyCompactList}\small\item\em Erases a function that is currently displayed on the graph. The start and end of the values along the X-\/axis can also be specified. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_s_g_l_1_1_graph_ab406eaa6b30080e663cd2152e8fd36d2}{Draw\+Axes}} ()
+\begin{DoxyCompactList}\small\item\em Adds the X and Y axes to the graph. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_s_g_l_1_1_graph_a5fa59d087be175868fe52c4b81f4c724}{Draw}} (\mbox{\hyperlink{class_s_g_l_1_1_label}{Label}} t)
+\begin{DoxyCompactList}\small\item\em Adds a line of text to the chart. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_s_g_l_1_1_graph_a794de8a13de541b1b6e43a94469a1801}{Erase}} (\mbox{\hyperlink{class_s_g_l_1_1_label}{Label}} t)
+\begin{DoxyCompactList}\small\item\em Removes a currently visible line of text from the chart. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_s_g_l_1_1_graph_ae4409704a5d6224c6f8a007977922bb8}{Draw}} (\mbox{\hyperlink{class_s_g_l_1_1_line}{Line}} l)
+\begin{DoxyCompactList}\small\item\em Adds a line to the chart. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_s_g_l_1_1_graph_ae091fb4ee52a500a4c6d186bc4b5d27f}{Erase}} (\mbox{\hyperlink{class_s_g_l_1_1_line}{Line}} l)
+\begin{DoxyCompactList}\small\item\em Removes a currently visible line from the chart. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_s_g_l_1_1_graph_ab9f18f59b4f05c9a3dcb2277634532d5}{Draw}} (\mbox{\hyperlink{class_s_g_l_1_1_rectangle}{Rectangle}} r)
+\begin{DoxyCompactList}\small\item\em Adds a rectangle to the chart. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_s_g_l_1_1_graph_ae0b009d2b01edfb52598f28fc89728da}{Erase}} (\mbox{\hyperlink{class_s_g_l_1_1_rectangle}{Rectangle}} r)
+\begin{DoxyCompactList}\small\item\em Removes a currently visible rectangle from the chart. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_s_g_l_1_1_graph_a2ef792871c730c14e38d7b33e97b7540}{Draw}} (\mbox{\hyperlink{struct_s_g_l_1_1_point}{Point}} p)
+\begin{DoxyCompactList}\small\item\em Adds a point to the chart. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_s_g_l_1_1_graph_a10cb5c6b153d39591b85cdf636269976}{Erase}} (\mbox{\hyperlink{struct_s_g_l_1_1_point}{Point}} p)
+\begin{DoxyCompactList}\small\item\em Removes a currently visible point from the chart. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_s_g_l_1_1_graph_ac0c3219e1779f5c5c6a0041177512198}{Draw}} (\mbox{\hyperlink{class_s_g_l_1_1_ellipse}{Ellipse}} e)
+\begin{DoxyCompactList}\small\item\em Adds an ellipse to the chart. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_s_g_l_1_1_graph_a8fb1d75464ea237e1424b99b0a0806f7}{Erase}} (\mbox{\hyperlink{class_s_g_l_1_1_ellipse}{Ellipse}} e)
+\begin{DoxyCompactList}\small\item\em Removes an ellipse from the chart. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_s_g_l_1_1_graph_aac0d51ab73e1f78788e9ecb6afc9d532}{Wait\+For\+Seconds}} (double seconds)
+\begin{DoxyCompactList}\small\item\em Waits a number of seconds. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_s_g_l_1_1_graph_ab4b0c60affd657436340a67b2e9ac2bd}{Wait\+For\+Update}} ()
+\begin{DoxyCompactList}\small\item\em Waits for the screen to be updates. (Waits a single frame.) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_s_g_l_1_1_graph_ab5ae05aa7165b934f951e0a2fb451c8d}{Show\+Console}} ()
+\begin{DoxyCompactList}\small\item\em Shows the console window. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_s_g_l_1_1_graph_ab88069c5a9c545be680996d876fad41f}{Hide\+Console}} ()
+\begin{DoxyCompactList}\small\item\em Hides the console window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_s_g_l_1_1_graph_a33da47cd9863c9a94953474ac52b02f8}{Delta\+Time}} =$>$ \+\_\+delta\+Time
+\begin{DoxyCompactList}\small\item\em A multiplier that can be used to create framerate-\/independent animations. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_s_g_l_1_1_graph_a900eb624d0906d4e14a0f0a0be4ad791}{Time}} =$>$ \+\_\+time
+\begin{DoxyCompactList}\small\item\em A framerate-\/independent time since the window was first shown. The aggregate of all previous delta times from their respective frames. This value is not influenced by pauses like \mbox{\hyperlink{class_s_g_l_1_1_graph_aac0d51ab73e1f78788e9ecb6afc9d532}{Wait\+For\+Seconds()}} or Get\+Int() and can therefore be used to create continuous animations regardless of such interruptions. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_s_g_l_1_1_graph_a9f890698937c413d4892d7ad7e674f15}{Range}} =$>$ Math.\+Min(\+\_\+x\+Max, \+\_\+y\+Max)
+\begin{DoxyCompactList}\small\item\em The minimum range of values that can be represented on both Ox-\/$>$ or Oy-\/$>$. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Color \mbox{\hyperlink{class_s_g_l_1_1_graph_af81e9aa32beac23df901a2483d0064d2}{Stroke\+Color}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The color of the strokes drawn onto the chart. \end{DoxyCompactList}\item 
+Color \mbox{\hyperlink{class_s_g_l_1_1_graph_a14469c5ae5d52e1eec659f6800a36c37}{Shape\+Fill}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The fill color used when drawing \mbox{\hyperlink{class_s_g_l_1_1_rectangle}{Rectangle}} and \mbox{\hyperlink{class_s_g_l_1_1_ellipse}{Ellipse}} \end{DoxyCompactList}\item 
+Color \mbox{\hyperlink{class_s_g_l_1_1_graph_a56d255eb64277564347b848684a8bb97}{Background}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The background color of the window. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_s_g_l_1_1_graph_a40051c7b2a49c71f4dad7fef5b1e44ef}{Stroke\+Thickness}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The thickness of the strokes drawn onto the window. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_s_g_l_1_1_graph_a466dbe496c87ac50283ee68af38ec98f}{Font\+Size}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The scale of the size of the font of the labels. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_s_g_l_1_1_graph_a60259b98072e0e872544a1175e4da5d5}{Target\+F\+PS}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The target framerate of the animations. Clamped between 1 and 60. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_s_g_l_1_1_graph_af02de749db6b6d1988e22dc598661def}{Closed}} = false\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Whether the user has requested the window to be closed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A graphical chart that is shown in a separate window. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_s_g_l_1_1_graph_ae49041037b01a96e44314f7b3b9b6166}\label{class_s_g_l_1_1_graph_ae49041037b01a96e44314f7b3b9b6166}} 
+\index{S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}!Graph@{Graph}}
+\index{Graph@{Graph}!S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}}
+\subsubsection{\texorpdfstring{Graph()}{Graph()}}
+{\footnotesize\ttfamily S\+G\+L.\+Graph.\+Graph (\begin{DoxyParamCaption}\item[{double}]{range,  }\item[{string}]{title = {\ttfamily \char`\"{}Main~Window\char`\"{}},  }\item[{double}]{width = {\ttfamily 800},  }\item[{double}]{height = {\ttfamily 640} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates a new empty chart window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & The title of the window.\\
+\hline
+{\em range} & The minimum value that can be represented on the chart.\\
+\hline
+{\em width} & The width of the window.\\
+\hline
+{\em height} & The height of the window.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_s_g_l_1_1_graph_ad1f5ca5a92e9a3c788178e44d65ba005}\label{class_s_g_l_1_1_graph_ad1f5ca5a92e9a3c788178e44d65ba005}} 
+\index{S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}!Clear@{Clear}}
+\index{Clear@{Clear}!S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}}
+\subsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily void S\+G\+L.\+Graph.\+Clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Clears the content of the chart. 
+
+\mbox{\Hypertarget{class_s_g_l_1_1_graph_ab39ea13f352304658601da75c8207b08}\label{class_s_g_l_1_1_graph_ab39ea13f352304658601da75c8207b08}} 
+\index{S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}!Close@{Close}}
+\index{Close@{Close}!S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}}
+\subsubsection{\texorpdfstring{Close()}{Close()}}
+{\footnotesize\ttfamily void S\+G\+L.\+Graph.\+Close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Closes the window. 
+
+\mbox{\Hypertarget{class_s_g_l_1_1_graph_acdd26dba75282796ec6d22b5be177b7e}\label{class_s_g_l_1_1_graph_acdd26dba75282796ec6d22b5be177b7e}} 
+\index{S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}!Draw@{Draw}}
+\index{Draw@{Draw}!S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}}
+\subsubsection{\texorpdfstring{Draw()}{Draw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily void S\+G\+L.\+Graph.\+Draw (\begin{DoxyParamCaption}\item[{Func$<$ double, double $>$}]{f,  }\item[{double}]{start = {\ttfamily double.MinValue},  }\item[{double}]{end = {\ttfamily double.MaxValue} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds the graph of a function to the chart. The start and end of the values along the X-\/axis can also be specified. 
+
+\mbox{\Hypertarget{class_s_g_l_1_1_graph_a5fa59d087be175868fe52c4b81f4c724}\label{class_s_g_l_1_1_graph_a5fa59d087be175868fe52c4b81f4c724}} 
+\index{S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}!Draw@{Draw}}
+\index{Draw@{Draw}!S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}}
+\subsubsection{\texorpdfstring{Draw()}{Draw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily void S\+G\+L.\+Graph.\+Draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_s_g_l_1_1_label}{Label}}}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a line of text to the chart. 
+
+\mbox{\Hypertarget{class_s_g_l_1_1_graph_ae4409704a5d6224c6f8a007977922bb8}\label{class_s_g_l_1_1_graph_ae4409704a5d6224c6f8a007977922bb8}} 
+\index{S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}!Draw@{Draw}}
+\index{Draw@{Draw}!S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}}
+\subsubsection{\texorpdfstring{Draw()}{Draw()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily void S\+G\+L.\+Graph.\+Draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_s_g_l_1_1_line}{Line}}}]{l }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a line to the chart. 
+
+\mbox{\Hypertarget{class_s_g_l_1_1_graph_ab9f18f59b4f05c9a3dcb2277634532d5}\label{class_s_g_l_1_1_graph_ab9f18f59b4f05c9a3dcb2277634532d5}} 
+\index{S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}!Draw@{Draw}}
+\index{Draw@{Draw}!S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}}
+\subsubsection{\texorpdfstring{Draw()}{Draw()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily void S\+G\+L.\+Graph.\+Draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_s_g_l_1_1_rectangle}{Rectangle}}}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a rectangle to the chart. 
+
+\mbox{\Hypertarget{class_s_g_l_1_1_graph_a2ef792871c730c14e38d7b33e97b7540}\label{class_s_g_l_1_1_graph_a2ef792871c730c14e38d7b33e97b7540}} 
+\index{S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}!Draw@{Draw}}
+\index{Draw@{Draw}!S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}}
+\subsubsection{\texorpdfstring{Draw()}{Draw()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily void S\+G\+L.\+Graph.\+Draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_g_l_1_1_point}{Point}}}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a point to the chart. 
+
+\mbox{\Hypertarget{class_s_g_l_1_1_graph_ac0c3219e1779f5c5c6a0041177512198}\label{class_s_g_l_1_1_graph_ac0c3219e1779f5c5c6a0041177512198}} 
+\index{S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}!Draw@{Draw}}
+\index{Draw@{Draw}!S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}}
+\subsubsection{\texorpdfstring{Draw()}{Draw()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily void S\+G\+L.\+Graph.\+Draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_s_g_l_1_1_ellipse}{Ellipse}}}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds an ellipse to the chart. 
+
+\mbox{\Hypertarget{class_s_g_l_1_1_graph_ab406eaa6b30080e663cd2152e8fd36d2}\label{class_s_g_l_1_1_graph_ab406eaa6b30080e663cd2152e8fd36d2}} 
+\index{S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}!Draw\+Axes@{Draw\+Axes}}
+\index{Draw\+Axes@{Draw\+Axes}!S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}}
+\subsubsection{\texorpdfstring{Draw\+Axes()}{DrawAxes()}}
+{\footnotesize\ttfamily void S\+G\+L.\+Graph.\+Draw\+Axes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds the X and Y axes to the graph. 
+
+\mbox{\Hypertarget{class_s_g_l_1_1_graph_ae56a2ac44e31ab8e8dae5dc042e8515d}\label{class_s_g_l_1_1_graph_ae56a2ac44e31ab8e8dae5dc042e8515d}} 
+\index{S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}!Erase@{Erase}}
+\index{Erase@{Erase}!S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}}
+\subsubsection{\texorpdfstring{Erase()}{Erase()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily void S\+G\+L.\+Graph.\+Erase (\begin{DoxyParamCaption}\item[{Func$<$ double, double $>$}]{f,  }\item[{double}]{start = {\ttfamily double.MinValue},  }\item[{double}]{end = {\ttfamily double.MaxValue} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Erases a function that is currently displayed on the graph. The start and end of the values along the X-\/axis can also be specified. 
+
+\mbox{\Hypertarget{class_s_g_l_1_1_graph_a794de8a13de541b1b6e43a94469a1801}\label{class_s_g_l_1_1_graph_a794de8a13de541b1b6e43a94469a1801}} 
+\index{S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}!Erase@{Erase}}
+\index{Erase@{Erase}!S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}}
+\subsubsection{\texorpdfstring{Erase()}{Erase()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily void S\+G\+L.\+Graph.\+Erase (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_s_g_l_1_1_label}{Label}}}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Removes a currently visible line of text from the chart. 
+
+\mbox{\Hypertarget{class_s_g_l_1_1_graph_ae091fb4ee52a500a4c6d186bc4b5d27f}\label{class_s_g_l_1_1_graph_ae091fb4ee52a500a4c6d186bc4b5d27f}} 
+\index{S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}!Erase@{Erase}}
+\index{Erase@{Erase}!S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}}
+\subsubsection{\texorpdfstring{Erase()}{Erase()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily void S\+G\+L.\+Graph.\+Erase (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_s_g_l_1_1_line}{Line}}}]{l }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Removes a currently visible line from the chart. 
+
+\mbox{\Hypertarget{class_s_g_l_1_1_graph_ae0b009d2b01edfb52598f28fc89728da}\label{class_s_g_l_1_1_graph_ae0b009d2b01edfb52598f28fc89728da}} 
+\index{S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}!Erase@{Erase}}
+\index{Erase@{Erase}!S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}}
+\subsubsection{\texorpdfstring{Erase()}{Erase()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily void S\+G\+L.\+Graph.\+Erase (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_s_g_l_1_1_rectangle}{Rectangle}}}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Removes a currently visible rectangle from the chart. 
+
+\mbox{\Hypertarget{class_s_g_l_1_1_graph_a10cb5c6b153d39591b85cdf636269976}\label{class_s_g_l_1_1_graph_a10cb5c6b153d39591b85cdf636269976}} 
+\index{S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}!Erase@{Erase}}
+\index{Erase@{Erase}!S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}}
+\subsubsection{\texorpdfstring{Erase()}{Erase()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily void S\+G\+L.\+Graph.\+Erase (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_g_l_1_1_point}{Point}}}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Removes a currently visible point from the chart. 
+
+\mbox{\Hypertarget{class_s_g_l_1_1_graph_a8fb1d75464ea237e1424b99b0a0806f7}\label{class_s_g_l_1_1_graph_a8fb1d75464ea237e1424b99b0a0806f7}} 
+\index{S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}!Erase@{Erase}}
+\index{Erase@{Erase}!S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}}
+\subsubsection{\texorpdfstring{Erase()}{Erase()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily void S\+G\+L.\+Graph.\+Erase (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_s_g_l_1_1_ellipse}{Ellipse}}}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Removes an ellipse from the chart. 
+
+\mbox{\Hypertarget{class_s_g_l_1_1_graph_ad01766cdde14e9f9bcae84caa9d5351d}\label{class_s_g_l_1_1_graph_ad01766cdde14e9f9bcae84caa9d5351d}} 
+\index{S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}!Hide@{Hide}}
+\index{Hide@{Hide}!S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}}
+\subsubsection{\texorpdfstring{Hide()}{Hide()}}
+{\footnotesize\ttfamily void S\+G\+L.\+Graph.\+Hide (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Hides the window. 
+
+\mbox{\Hypertarget{class_s_g_l_1_1_graph_ab88069c5a9c545be680996d876fad41f}\label{class_s_g_l_1_1_graph_ab88069c5a9c545be680996d876fad41f}} 
+\index{S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}!Hide\+Console@{Hide\+Console}}
+\index{Hide\+Console@{Hide\+Console}!S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}}
+\subsubsection{\texorpdfstring{Hide\+Console()}{HideConsole()}}
+{\footnotesize\ttfamily static void S\+G\+L.\+Graph.\+Hide\+Console (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Hides the console window. 
+
+\mbox{\Hypertarget{class_s_g_l_1_1_graph_aba994e0f4ec93be3f3d181fa128db070}\label{class_s_g_l_1_1_graph_aba994e0f4ec93be3f3d181fa128db070}} 
+\index{S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}!Is\+Key\+Down@{Is\+Key\+Down}}
+\index{Is\+Key\+Down@{Is\+Key\+Down}!S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}}
+\subsubsection{\texorpdfstring{Is\+Key\+Down()}{IsKeyDown()}}
+{\footnotesize\ttfamily bool S\+G\+L.\+Graph.\+Is\+Key\+Down (\begin{DoxyParamCaption}\item[{Key}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if the specified key is currently pressed. 
+
+\mbox{\Hypertarget{class_s_g_l_1_1_graph_a274ab575056c833cd3f3f45770c20b58}\label{class_s_g_l_1_1_graph_a274ab575056c833cd3f3f45770c20b58}} 
+\index{S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}!Is\+Mouse\+Button\+Down@{Is\+Mouse\+Button\+Down}}
+\index{Is\+Mouse\+Button\+Down@{Is\+Mouse\+Button\+Down}!S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}}
+\subsubsection{\texorpdfstring{Is\+Mouse\+Button\+Down()}{IsMouseButtonDown()}}
+{\footnotesize\ttfamily bool S\+G\+L.\+Graph.\+Is\+Mouse\+Button\+Down (\begin{DoxyParamCaption}\item[{Mouse\+Button}]{button }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if the specified mouse button is currently pressed. 
+
+\mbox{\Hypertarget{class_s_g_l_1_1_graph_a16bfdc1d809835f73bd9870af125b161}\label{class_s_g_l_1_1_graph_a16bfdc1d809835f73bd9870af125b161}} 
+\index{S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}!Notify@{Notify}}
+\index{Notify@{Notify}!S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}}
+\subsubsection{\texorpdfstring{Notify()}{Notify()}}
+{\footnotesize\ttfamily void S\+G\+L.\+Graph.\+Notify (\begin{DoxyParamCaption}\item[{string}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Shows a message to the user. 
+
+\mbox{\Hypertarget{class_s_g_l_1_1_graph_ab84327403a05e999998f54b1bc4d1c35}\label{class_s_g_l_1_1_graph_ab84327403a05e999998f54b1bc4d1c35}} 
+\index{S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}!Read\+Double@{Read\+Double}}
+\index{Read\+Double@{Read\+Double}!S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}}
+\subsubsection{\texorpdfstring{Read\+Double()}{ReadDouble()}}
+{\footnotesize\ttfamily double S\+G\+L.\+Graph.\+Read\+Double (\begin{DoxyParamCaption}\item[{string}]{message = {\ttfamily \char`\"{}Please,~enter~a~number.\char`\"{}},  }\item[{double}]{default\+Value = {\ttfamily 0.0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reads a 64-\/bit floating point number from the user through a graphical prompt. 
+
+\mbox{\Hypertarget{class_s_g_l_1_1_graph_aa9d57659823175542533c9cceeeb1ff6}\label{class_s_g_l_1_1_graph_aa9d57659823175542533c9cceeeb1ff6}} 
+\index{S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}!Read\+Float@{Read\+Float}}
+\index{Read\+Float@{Read\+Float}!S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}}
+\subsubsection{\texorpdfstring{Read\+Float()}{ReadFloat()}}
+{\footnotesize\ttfamily float S\+G\+L.\+Graph.\+Read\+Float (\begin{DoxyParamCaption}\item[{string}]{message = {\ttfamily \char`\"{}Please,~enter~a~number.\char`\"{}},  }\item[{float}]{default\+Value = {\ttfamily 0f} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reads a 32-\/bit floating point number from the user through a graphical prompt. 
+
+\mbox{\Hypertarget{class_s_g_l_1_1_graph_a4162119a26ba960884e3660c0750d14c}\label{class_s_g_l_1_1_graph_a4162119a26ba960884e3660c0750d14c}} 
+\index{S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}!Read\+Int@{Read\+Int}}
+\index{Read\+Int@{Read\+Int}!S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}}
+\subsubsection{\texorpdfstring{Read\+Int()}{ReadInt()}}
+{\footnotesize\ttfamily int S\+G\+L.\+Graph.\+Read\+Int (\begin{DoxyParamCaption}\item[{string}]{message = {\ttfamily \char`\"{}Please,~enter~an~integer.\char`\"{}},  }\item[{int}]{default\+Value = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reads a 32-\/bit integer from the user through a graphical prompt. 
+
+\mbox{\Hypertarget{class_s_g_l_1_1_graph_aa55701744ab9d06019ff60e4d2da0a16}\label{class_s_g_l_1_1_graph_aa55701744ab9d06019ff60e4d2da0a16}} 
+\index{S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}!Read\+Long@{Read\+Long}}
+\index{Read\+Long@{Read\+Long}!S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}}
+\subsubsection{\texorpdfstring{Read\+Long()}{ReadLong()}}
+{\footnotesize\ttfamily long S\+G\+L.\+Graph.\+Read\+Long (\begin{DoxyParamCaption}\item[{string}]{message = {\ttfamily \char`\"{}Please,~enter~an~integer.\char`\"{}},  }\item[{long}]{default\+Value = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reads a 64-\/bit integer from the user through a graphical prompt. 
+
+\mbox{\Hypertarget{class_s_g_l_1_1_graph_a25db2a007fb5adaa390a44f16d4d653e}\label{class_s_g_l_1_1_graph_a25db2a007fb5adaa390a44f16d4d653e}} 
+\index{S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}!Read\+String@{Read\+String}}
+\index{Read\+String@{Read\+String}!S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}}
+\subsubsection{\texorpdfstring{Read\+String()}{ReadString()}}
+{\footnotesize\ttfamily string S\+G\+L.\+Graph.\+Read\+String (\begin{DoxyParamCaption}\item[{string}]{message = {\ttfamily \char`\"{}Please,~enter~some~text.\char`\"{}},  }\item[{string}]{default\+Value = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reads a string from the user through a graphical prompt. 
+
+\mbox{\Hypertarget{class_s_g_l_1_1_graph_ab1d2be74da25ee0a40829993a2f597c4}\label{class_s_g_l_1_1_graph_ab1d2be74da25ee0a40829993a2f597c4}} 
+\index{S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}!Select\+Index$<$ T $>$@{Select\+Index$<$ T $>$}}
+\index{Select\+Index$<$ T $>$@{Select\+Index$<$ T $>$}!S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}}
+\subsubsection{\texorpdfstring{Select\+Index$<$ T $>$()}{SelectIndex< T >()}}
+{\footnotesize\ttfamily int S\+G\+L.\+Graph.\+Select\+Index$<$ T $>$ (\begin{DoxyParamCaption}\item[{string}]{message,  }\item[{T \mbox{[}$\,$\mbox{]}}]{options,  }\item[{int}]{default\+Index = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Asks the user to select an item from the list and returns the selected item. 
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// Example usage}
+Color[] availableColors = \textcolor{keyword}{new} Color[] \{
+    Colors.Black,
+    Colors.Blue,
+    Colors.Green,
+\};
+\textcolor{keywordtype}{int} index = g.SelectIndex(\textcolor{stringliteral}{"Choose a background color..."}, availableColors);
+Color selectedColor = availableColors[index];
+g.Background = selectedColor;
+\end{DoxyCode}
+ \mbox{\Hypertarget{class_s_g_l_1_1_graph_a482da34c25dc49ec1fe1aed288d2807a}\label{class_s_g_l_1_1_graph_a482da34c25dc49ec1fe1aed288d2807a}} 
+\index{S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}!Select\+Item$<$ T $>$@{Select\+Item$<$ T $>$}}
+\index{Select\+Item$<$ T $>$@{Select\+Item$<$ T $>$}!S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}}
+\subsubsection{\texorpdfstring{Select\+Item$<$ T $>$()}{SelectItem< T >()}}
+{\footnotesize\ttfamily T S\+G\+L.\+Graph.\+Select\+Item$<$ T $>$ (\begin{DoxyParamCaption}\item[{string}]{message,  }\item[{T \mbox{[}$\,$\mbox{]}}]{options,  }\item[{int}]{default\+Index = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Asks the user to select an item from the list and returns the selected item. 
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// Example usage}
+Color[] availableColors = \textcolor{keyword}{new} Color[] \{
+    Colors.Black,
+    Colors.Blue,
+    Colors.Green,
+\};
+Color selectedColor = g.SelectItem(\textcolor{stringliteral}{"Choose a background color..."}, availableColors);
+g.Background = selectedColor;
+\end{DoxyCode}
+ \mbox{\Hypertarget{class_s_g_l_1_1_graph_a02daa8a4a7e540677d76e9a0ac40039d}\label{class_s_g_l_1_1_graph_a02daa8a4a7e540677d76e9a0ac40039d}} 
+\index{S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}!Select\+Point@{Select\+Point}}
+\index{Select\+Point@{Select\+Point}!S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}}
+\subsubsection{\texorpdfstring{Select\+Point()}{SelectPoint()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_s_g_l_1_1_point}{Point}} S\+G\+L.\+Graph.\+Select\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Asks the user to select a point on the chart and returns the coordinates of that point. 
+
+\mbox{\Hypertarget{class_s_g_l_1_1_graph_ac67339a4d4304b41258344692535c139}\label{class_s_g_l_1_1_graph_ac67339a4d4304b41258344692535c139}} 
+\index{S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}!Show@{Show}}
+\index{Show@{Show}!S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}}
+\subsubsection{\texorpdfstring{Show()}{Show()}}
+{\footnotesize\ttfamily void S\+G\+L.\+Graph.\+Show (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Shows the window. 
+
+\mbox{\Hypertarget{class_s_g_l_1_1_graph_ab5ae05aa7165b934f951e0a2fb451c8d}\label{class_s_g_l_1_1_graph_ab5ae05aa7165b934f951e0a2fb451c8d}} 
+\index{S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}!Show\+Console@{Show\+Console}}
+\index{Show\+Console@{Show\+Console}!S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}}
+\subsubsection{\texorpdfstring{Show\+Console()}{ShowConsole()}}
+{\footnotesize\ttfamily static void S\+G\+L.\+Graph.\+Show\+Console (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Shows the console window. 
+
+\mbox{\Hypertarget{class_s_g_l_1_1_graph_a6b99d7fed85538b0dd5906e359fcf9c0}\label{class_s_g_l_1_1_graph_a6b99d7fed85538b0dd5906e359fcf9c0}} 
+\index{S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}!Wait\+For\+Exit@{Wait\+For\+Exit}}
+\index{Wait\+For\+Exit@{Wait\+For\+Exit}!S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}}
+\subsubsection{\texorpdfstring{Wait\+For\+Exit()}{WaitForExit()}}
+{\footnotesize\ttfamily void S\+G\+L.\+Graph.\+Wait\+For\+Exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Waits for the user to manually close the window. 
+
+\mbox{\Hypertarget{class_s_g_l_1_1_graph_aac0d51ab73e1f78788e9ecb6afc9d532}\label{class_s_g_l_1_1_graph_aac0d51ab73e1f78788e9ecb6afc9d532}} 
+\index{S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}!Wait\+For\+Seconds@{Wait\+For\+Seconds}}
+\index{Wait\+For\+Seconds@{Wait\+For\+Seconds}!S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}}
+\subsubsection{\texorpdfstring{Wait\+For\+Seconds()}{WaitForSeconds()}}
+{\footnotesize\ttfamily void S\+G\+L.\+Graph.\+Wait\+For\+Seconds (\begin{DoxyParamCaption}\item[{double}]{seconds }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Waits a number of seconds. 
+
+\mbox{\Hypertarget{class_s_g_l_1_1_graph_ab4b0c60affd657436340a67b2e9ac2bd}\label{class_s_g_l_1_1_graph_ab4b0c60affd657436340a67b2e9ac2bd}} 
+\index{S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}!Wait\+For\+Update@{Wait\+For\+Update}}
+\index{Wait\+For\+Update@{Wait\+For\+Update}!S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}}
+\subsubsection{\texorpdfstring{Wait\+For\+Update()}{WaitForUpdate()}}
+{\footnotesize\ttfamily void S\+G\+L.\+Graph.\+Wait\+For\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Waits for the screen to be updates. (Waits a single frame.) 
+
+\mbox{\Hypertarget{class_s_g_l_1_1_graph_add2e8a9bb0b5174fc9a80e21b7d407e8}\label{class_s_g_l_1_1_graph_add2e8a9bb0b5174fc9a80e21b7d407e8}} 
+\index{S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}!Yes\+Or\+No@{Yes\+Or\+No}}
+\index{Yes\+Or\+No@{Yes\+Or\+No}!S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}}
+\subsubsection{\texorpdfstring{Yes\+Or\+No()}{YesOrNo()}}
+{\footnotesize\ttfamily bool S\+G\+L.\+Graph.\+Yes\+Or\+No (\begin{DoxyParamCaption}\item[{string}]{message,  }\item[{bool}]{default\+Value = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Asks the user a questing and allows them to answer it with yer (true) or no (false) through a graphical prompt. 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_s_g_l_1_1_graph_a33da47cd9863c9a94953474ac52b02f8}\label{class_s_g_l_1_1_graph_a33da47cd9863c9a94953474ac52b02f8}} 
+\index{S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}!Delta\+Time@{Delta\+Time}}
+\index{Delta\+Time@{Delta\+Time}!S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}}
+\subsubsection{\texorpdfstring{Delta\+Time}{DeltaTime}}
+{\footnotesize\ttfamily double S\+G\+L.\+Graph.\+Delta\+Time =$>$ \+\_\+delta\+Time}
+
+
+
+A multiplier that can be used to create framerate-\/independent animations. 
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// Example usage}
+\mbox{\hyperlink{class_s_g_l_1_1_graph_ae49041037b01a96e44314f7b3b9b6166}{Graph}} g = \textcolor{keyword}{new} \mbox{\hyperlink{class_s_g_l_1_1_graph_ae49041037b01a96e44314f7b3b9b6166}{Graph}}(5);
+Point pt = \textcolor{keyword}{new} Point(0, 1);
+\textcolor{keywordflow}{while} (\textcolor{keyword}{true}) 
+\{
+    \textcolor{comment}{// Erase the previously-drawn point (if any).}
+    g.Erase(pt);
+    \textcolor{comment}{// Moves the point upwards by 1 unit per seconds (regardless of framerate)}
+    pt += 2 * Point.Up * g.DeltaTime;
+    \textcolor{comment}{// Draws the new point.}
+    g.Draw(pt);
+    \textcolor{comment}{// Waits for the screen to update (1 frame).}
+    g.WaitForUpdate();
+\}
+\end{DoxyCode}
+ \mbox{\Hypertarget{class_s_g_l_1_1_graph_a9f890698937c413d4892d7ad7e674f15}\label{class_s_g_l_1_1_graph_a9f890698937c413d4892d7ad7e674f15}} 
+\index{S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}!Range@{Range}}
+\index{Range@{Range}!S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}}
+\subsubsection{\texorpdfstring{Range}{Range}}
+{\footnotesize\ttfamily double S\+G\+L.\+Graph.\+Range =$>$ Math.\+Min(\+\_\+x\+Max, \+\_\+y\+Max)}
+
+
+
+The minimum range of values that can be represented on both Ox-\/$>$ or Oy-\/$>$. 
+
+\mbox{\Hypertarget{class_s_g_l_1_1_graph_a900eb624d0906d4e14a0f0a0be4ad791}\label{class_s_g_l_1_1_graph_a900eb624d0906d4e14a0f0a0be4ad791}} 
+\index{S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}!Time@{Time}}
+\index{Time@{Time}!S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}}
+\subsubsection{\texorpdfstring{Time}{Time}}
+{\footnotesize\ttfamily double S\+G\+L.\+Graph.\+Time =$>$ \+\_\+time}
+
+
+
+A framerate-\/independent time since the window was first shown. The aggregate of all previous delta times from their respective frames. This value is not influenced by pauses like \mbox{\hyperlink{class_s_g_l_1_1_graph_aac0d51ab73e1f78788e9ecb6afc9d532}{Wait\+For\+Seconds()}} or Get\+Int() and can therefore be used to create continuous animations regardless of such interruptions. 
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// Example usage}
+\textcolor{keywordtype}{double} prevTime = 0;
+\textcolor{keywordflow}{while} (\textcolor{keyword}{true}) 
+\{   
+    \textcolor{comment}{// Will draw the graph of Sin(x) that will}
+    \textcolor{comment}{// be displaced every frame by a given value }
+    \textcolor{comment}{// and create a wave-like effect.}
+    g.Draw(x => Math.Sin(x + g.Time);
+    \textcolor{comment}{// Erase the previous such graph so that the two don't overlap. }
+    g.Erase(x => Math.Sin(x + prevTime);
+    \textcolor{comment}{// Save the latest value of this parameter.}
+    prevTime = g.Time;
+    \textcolor{comment}{// Wait for the screen to update.}
+    g.WaitForUpdate();
+\}
+\end{DoxyCode}
+ 
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_s_g_l_1_1_graph_a56d255eb64277564347b848684a8bb97}\label{class_s_g_l_1_1_graph_a56d255eb64277564347b848684a8bb97}} 
+\index{S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}!Background@{Background}}
+\index{Background@{Background}!S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}}
+\subsubsection{\texorpdfstring{Background}{Background}}
+{\footnotesize\ttfamily Color S\+G\+L.\+Graph.\+Background\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The background color of the window. 
+
+\mbox{\Hypertarget{class_s_g_l_1_1_graph_af02de749db6b6d1988e22dc598661def}\label{class_s_g_l_1_1_graph_af02de749db6b6d1988e22dc598661def}} 
+\index{S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}!Closed@{Closed}}
+\index{Closed@{Closed}!S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}}
+\subsubsection{\texorpdfstring{Closed}{Closed}}
+{\footnotesize\ttfamily bool S\+G\+L.\+Graph.\+Closed = false\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Whether the user has requested the window to be closed. 
+
+\mbox{\Hypertarget{class_s_g_l_1_1_graph_a466dbe496c87ac50283ee68af38ec98f}\label{class_s_g_l_1_1_graph_a466dbe496c87ac50283ee68af38ec98f}} 
+\index{S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}!Font\+Size@{Font\+Size}}
+\index{Font\+Size@{Font\+Size}!S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}}
+\subsubsection{\texorpdfstring{Font\+Size}{FontSize}}
+{\footnotesize\ttfamily double S\+G\+L.\+Graph.\+Font\+Size\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The scale of the size of the font of the labels. 
+
+\mbox{\Hypertarget{class_s_g_l_1_1_graph_a14469c5ae5d52e1eec659f6800a36c37}\label{class_s_g_l_1_1_graph_a14469c5ae5d52e1eec659f6800a36c37}} 
+\index{S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}!Shape\+Fill@{Shape\+Fill}}
+\index{Shape\+Fill@{Shape\+Fill}!S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}}
+\subsubsection{\texorpdfstring{Shape\+Fill}{ShapeFill}}
+{\footnotesize\ttfamily Color S\+G\+L.\+Graph.\+Shape\+Fill\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The fill color used when drawing \mbox{\hyperlink{class_s_g_l_1_1_rectangle}{Rectangle}} and \mbox{\hyperlink{class_s_g_l_1_1_ellipse}{Ellipse}} 
+
+\mbox{\Hypertarget{class_s_g_l_1_1_graph_af81e9aa32beac23df901a2483d0064d2}\label{class_s_g_l_1_1_graph_af81e9aa32beac23df901a2483d0064d2}} 
+\index{S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}!Stroke\+Color@{Stroke\+Color}}
+\index{Stroke\+Color@{Stroke\+Color}!S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}}
+\subsubsection{\texorpdfstring{Stroke\+Color}{StrokeColor}}
+{\footnotesize\ttfamily Color S\+G\+L.\+Graph.\+Stroke\+Color\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The color of the strokes drawn onto the chart. 
+
+\mbox{\Hypertarget{class_s_g_l_1_1_graph_a40051c7b2a49c71f4dad7fef5b1e44ef}\label{class_s_g_l_1_1_graph_a40051c7b2a49c71f4dad7fef5b1e44ef}} 
+\index{S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}!Stroke\+Thickness@{Stroke\+Thickness}}
+\index{Stroke\+Thickness@{Stroke\+Thickness}!S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}}
+\subsubsection{\texorpdfstring{Stroke\+Thickness}{StrokeThickness}}
+{\footnotesize\ttfamily double S\+G\+L.\+Graph.\+Stroke\+Thickness\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The thickness of the strokes drawn onto the window. 
+
+\mbox{\Hypertarget{class_s_g_l_1_1_graph_a60259b98072e0e872544a1175e4da5d5}\label{class_s_g_l_1_1_graph_a60259b98072e0e872544a1175e4da5d5}} 
+\index{S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}!Target\+F\+PS@{Target\+F\+PS}}
+\index{Target\+F\+PS@{Target\+F\+PS}!S\+G\+L\+::\+Graph@{S\+G\+L\+::\+Graph}}
+\subsubsection{\texorpdfstring{Target\+F\+PS}{TargetFPS}}
+{\footnotesize\ttfamily int S\+G\+L.\+Graph.\+Target\+F\+PS\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The target framerate of the animations. Clamped between 1 and 60. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Graph.\+cs\end{DoxyCompactItemize}

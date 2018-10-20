@@ -16,13 +16,13 @@ namespace SGL
     /// <summary>
     /// A graphical chart that is shown in a separate window.
     /// </summary>
-    public class Graph
+    public class Window
     {
         /// <summary>
         /// Encapsulates the current configuration of the graph.
         /// Used when communicating with the UI thread to alleviate the need for synchronization. 
         /// </summary>
-        private class GraphConfig
+        private class RenderConfig
         {
             public SolidColorBrush Stroke { get; set; }
             public SolidColorBrush Fill { get; set; }
@@ -54,11 +54,11 @@ namespace SGL
         /// <summary>
         /// A reference to the window. Should only be mutated through the UI thread.
         /// </summary>
-        private Window _window;
+        private System.Windows.Window _window;
         /// <summary>
         /// A reference to the canvas element. Should only be mutated through the UI thread.
         /// </summary>
-        private Canvas _canvas;
+        private System.Windows.Controls.Canvas _canvas;
         /// <summary>
         /// The width of the window as set by the user.
         /// </summary>
@@ -211,7 +211,7 @@ namespace SGL
         /// </summary>
         /// \code
         /// // Example usage
-        /// Graph g = new Graph(5);
+        /// Window g = new Window(range: 5);
         /// Point pt = new Point(0, 1);
         /// while (true) 
         /// {
@@ -263,13 +263,13 @@ namespace SGL
         public bool Closed { get; private set; } = false;
 
         /// <summary>
-        /// Creates a new empty chart window.
+        /// Creates a new window that can be drawn to.
         /// </summary>
         /// <param name="title">The title of the window.</param>
         /// <param name="range">The minimum value that can be represented on the chart.</param>
         /// <param name="width">The width of the window.</param>
         /// <param name="height">The height of the window.</param>
-        public Graph(double range, string title = "Main Window", double width = 800, double height = 640)
+        public Window(double range, string title = "Main Window", double width = 800, double height = 640)
         {
             _width = width;
             _height = height;
@@ -298,7 +298,7 @@ namespace SGL
                     _uiDispatcher = Dispatcher.CurrentDispatcher;
                     _application = new Application();
 
-                    _window = new Window
+                    _window = new System.Windows.Window
                     {
                         Title = title,
                         Width = width,
@@ -308,7 +308,7 @@ namespace SGL
                     };
 
                     var canvasTransform = new ScaleTransform(1.0, 1.0);
-                    _canvas = new Canvas
+                    _canvas = new System.Windows.Controls.Canvas
                     {
                         LayoutTransform = canvasTransform,
                     };
@@ -679,8 +679,8 @@ namespace SGL
                         StrokeThickness = dc.Thickness,
                     };
 
-                    Canvas.SetLeft(polyline, 0);
-                    Canvas.SetTop(polyline, 0);
+                    System.Windows.Controls.Canvas.SetLeft(polyline, 0);
+                    System.Windows.Controls.Canvas.SetTop(polyline, 0);
                     _canvas.Children.Add(polyline);
                 }
             });
@@ -927,7 +927,7 @@ namespace SGL
         /// <summary>
         /// Adds a label to the canvas. Must be run on the UI thread and should not be called directly.
         /// </summary>
-        private void AddToCanvas(Label t, GraphConfig dc)
+        private void AddToCanvas(Label t, RenderConfig dc)
         {
             var s = new TextBlock
             {
@@ -959,15 +959,15 @@ namespace SGL
                     break;
             }
 
-            Canvas.SetLeft(s, TransformX(t.Position.X) - s.DesiredSize.Width / 2 + offsetX);
-            Canvas.SetTop(s, TransformY(t.Position.Y) - s.DesiredSize.Height / 2 + offsetY);
+            System.Windows.Controls.Canvas.SetLeft(s, TransformX(t.Position.X) - s.DesiredSize.Width / 2 + offsetX);
+            System.Windows.Controls.Canvas.SetTop(s, TransformY(t.Position.Y) - s.DesiredSize.Height / 2 + offsetY);
             _canvas.Children.Add(s);
         }
 
         /// <summary>
         /// Adds a line to the canvas. Must be run on the UI thread and should not be called directly.
         /// </summary>
-        private void AddToCanvas(Line l, GraphConfig dc)
+        private void AddToCanvas(Line l, RenderConfig dc)
         {
             var s = new System.Windows.Shapes.Line
             {
@@ -987,7 +987,7 @@ namespace SGL
         /// <summary>
         /// Adds a rectangle to the canvas. Must be run on the UI thread and should not be called directly.
         /// </summary>
-        private void AddToCanvas(Rectangle r, GraphConfig dc)
+        private void AddToCanvas(Rectangle r, RenderConfig dc)
         {
             var w = r.Width * XMultiplier;
             var h = r.Height * YMultiplier;
@@ -1001,15 +1001,15 @@ namespace SGL
                 Fill = dc.Fill,
             };
 
-            Canvas.SetLeft(s, TransformX(r.Left));
-            Canvas.SetTop(s, TransformY(r.Top));
+            System.Windows.Controls.Canvas.SetLeft(s, TransformX(r.Left));
+            System.Windows.Controls.Canvas.SetTop(s, TransformY(r.Top));
             _canvas.Children.Add(s);
         }
 
         /// <summary>
         /// Adds a point to the canvas. Must be run on the UI thread and should not be called directly.
         /// </summary>
-        private void AddToCanvas(Point p, GraphConfig dc)
+        private void AddToCanvas(Point p, RenderConfig dc)
         {
             var wh = dc.Thickness * 0.01 * Math.Min(_actualWidth, _actualHeight);
             var s = new System.Windows.Shapes.Ellipse
@@ -1022,15 +1022,15 @@ namespace SGL
                 Fill = dc.Stroke,
             };
 
-            Canvas.SetLeft(s, TransformX(p.X) - wh / 2);
-            Canvas.SetTop(s, TransformY(p.Y) - wh / 2);
+            System.Windows.Controls.Canvas.SetLeft(s, TransformX(p.X) - wh / 2);
+            System.Windows.Controls.Canvas.SetTop(s, TransformY(p.Y) - wh / 2);
             _canvas.Children.Add(s);
         }
 
         /// <summary>
         /// Adds an ellipse to the canvas. Must be run on the UI thread and should not be called directly.
         /// </summary>
-        private void AddToCanvas(Ellipse e, GraphConfig dc)
+        private void AddToCanvas(Ellipse e, RenderConfig dc)
         {
             var w = e.RX * _actualWidth / _xMax;
             var h = e.RY * _actualHeight / _yMax;
@@ -1044,8 +1044,8 @@ namespace SGL
                 Fill = dc.Fill,
             };
 
-            Canvas.SetLeft(s, TransformX(e.X) - w / 2);
-            Canvas.SetTop(s, TransformY(e.Y) - h / 2);
+            System.Windows.Controls.Canvas.SetLeft(s, TransformX(e.X) - w / 2);
+            System.Windows.Controls.Canvas.SetTop(s, TransformY(e.Y) - h / 2);
             _canvas.Children.Add(s);
         }
 
@@ -1065,9 +1065,9 @@ namespace SGL
         /// <summary>
         /// Invokes the action on the UI thread asynchronously.
         /// </summary>
-        private void AddToRenderQueue(Action<GraphConfig> action)
+        private void AddToRenderQueue(Action<RenderConfig> action)
         {
-            var dc = new GraphConfig
+            var dc = new RenderConfig
             {
                 Fill = _fillBrush,
                 Stroke = _strokeBrush,

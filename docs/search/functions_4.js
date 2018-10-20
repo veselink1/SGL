@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['hide',['Hide',['../class_s_g_l_1_1_graph.html#ad01766cdde14e9f9bcae84caa9d5351d',1,'SGL::Graph']]],
-  ['hideconsole',['HideConsole',['../class_s_g_l_1_1_graph.html#ab88069c5a9c545be680996d876fad41f',1,'SGL::Graph']]]
+  ['iskeydown',['IsKeyDown',['../class_s_g_l_1_1_window.html#ad200b0483e6e163254a3b27760771d70',1,'SGL::Window']]],
+  ['ismousebuttondown',['IsMouseButtonDown',['../class_s_g_l_1_1_window.html#a58b9a6f98e9b6fffc6afeb48b0f01454',1,'SGL::Window']]]
 ];
