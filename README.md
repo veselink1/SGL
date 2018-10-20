@@ -15,6 +15,7 @@ Use one of the examples below to test the installation.
 // Program.cs
 
 using System;
+using System.Windows.Media;
 using SGL;
 
 class Program
