@@ -31,7 +31,7 @@ class Program
 {
   static void Main(string[] args)
   {
-    var w = new Window(range: 5, title: "My Graph");
+    var g = new Window(range: 5, title: "My Graph");
     g.StrokeColor = Colors.Indigo;
     
     g.Draw(x => Math.Sin(x));
