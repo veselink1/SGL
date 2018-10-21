@@ -16,7 +16,7 @@ These instructions assume you are familiar with and using Visual Studio.
 
 ## Implementation
 
-SGL is implemented as a thin layer on top of WPF. The API surface is purposefully kept to a minimum. The main type users interact with is the Window class. It is implemented as a separate graphical window which allows the user to draw different shapes, graph functions, plot arrays of points etc. The library also exports a couple of primitive shapes, implemented as value types, namely: Point, Ellipse, Rectangle, Line and Label. User input is supported through the instance methods GetInt, GetDouble, GetString etc. on the Window class. Other types of input (selecting a point on the screen, selecting an item from an array etc.) are also supported through a nice graphical interface. 
+SGL is implemented as a thin layer on top of WPF. The API surface is purposefully kept to a minimum. All public methods are blocking so that users don't need to think about the actual multithreaded implementation. The main type users interact with is the Window class. It is implemented as a separate graphical window which allows the user to draw different shapes, graph functions, plot arrays of points etc. The library also exports a couple of primitive shapes, implemented as value types, namely: Point, Ellipse, Rectangle, Line and Label. User input is supported through the instance methods GetInt, GetDouble, GetString etc. on the Window class. Other types of input (selecting a point on the screen, selecting an item from an array etc.) are also supported through a nice graphical interface. 
 
 ## Examples
 
