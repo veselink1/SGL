@@ -31,6 +31,30 @@ namespace SGL
         }
 
         /// <summary>
+        /// Shows the console window.
+        /// </summary>
+        public static void ShowConsole()
+        {
+            IntPtr hConsole = NativeMethods.GetConsoleWindow();
+            if (hConsole != IntPtr.Zero)
+            {
+                NativeMethods.ShowWindow(hConsole, NativeMethods.SW_SHOW);
+            }
+        }
+
+        /// <summary>
+        /// Hides the console window.
+        /// </summary>
+        public static void HideConsole()
+        {
+            IntPtr hConsole = NativeMethods.GetConsoleWindow();
+            if (hConsole != IntPtr.Zero)
+            {
+                NativeMethods.ShowWindow(hConsole, NativeMethods.SW_HIDE);
+            }
+        }
+
+        /// <summary>
         /// The maximum frame-rate that can be set.
         /// </summary>
         private const int MaxFPS = 60;
@@ -46,93 +70,167 @@ namespace SGL
         /// The dispatcher associated with the UI thread of the graph.
         /// </summary>
         private Dispatcher _uiDispatcher;
+
         /// <summary>
         /// The UI thread spawned for this graph.
         /// </summary>
         private Thread _uiThread;
+
+        /// <summary>
+        /// The current Application instance.
+        /// </summary>
         private Application _application;
+
         /// <summary>
         /// A reference to the window. Should only be mutated through the UI thread.
         /// </summary>
         private System.Windows.Window _window;
+
         /// <summary>
         /// A reference to the canvas element. Should only be mutated through the UI thread.
         /// </summary>
-        private System.Windows.Controls.Canvas _canvas;
+        private Canvas _canvas;
+
         /// <summary>
         /// The width of the window as set by the user.
         /// </summary>
-        private double _width;
+        private int _width;
+
         /// <summary>
         /// The height of the window as set by the user.
         /// </summary>
-        private double _height;
+        private int _height;
+
         /// <summary>
         /// The actual width of the canvas element in DPI-independent pixels.
         /// </summary>
         private double _actualWidth;
+
         /// <summary>
         /// The actual height of the canvas element in DPI-independent pixels.
         /// </summary>
         private double _actualHeight;
+
+        /// <summary>
+        /// The range of values that can be shown on the graph.
+        /// </summary>
+        private readonly double _range;
+
         /// <summary>
         /// The maximum value on the horizontal axis that can be visualised.
         /// </summary>
         private double _xMax;
+
         /// <summary>
         /// The maximum value on the vertical axis that can be visualised.
         /// </summary>
         private double _yMax;
+
         /// <summary>
         /// The value that an X-coordinate has to be multiplied by 
         /// to be transformed to window coordinates.
         /// </summary>
         private double XMultiplier => _actualWidth / 2 / _xMax;
+
         /// <summary>
         /// The value that an Y-coordinate has to be multiplied by 
         /// to be transformed to window coordinates.
         /// </summary>
         private double YMultiplier => _actualHeight / 2 / _yMax;
+
         /// <summary>
         /// The brush of the strokes made on the canvas.
         /// </summary>
         private SolidColorBrush _strokeBrush;
+
         /// <summary>
         /// The fill brush of the closed shapes that can be drawn.
         /// </summary>
         private SolidColorBrush _fillBrush;
+
         /// <summary>
         /// The thickness of the strokes.
         /// </summary>
         private double _thickness;
+
         /// <summary>
         /// The background color of the graph.
         /// </summary>
         private SolidColorBrush _backgroundBrush;
+
         /// <summary>
         /// The font size scaling factor. 
         /// </summary>
         private double _fontSizeScale;
+
         /// <summary>
         /// The target frame-rate set by the user.
         /// </summary>
         private int _targetFramerate;
+
         /// <summary>
         /// The time it took for the last frame to render.
         /// </summary>
         private double _deltaTime;
+
         /// <summary>
         /// The total time it took for all frame from the opening of the window to render.
         /// </summary>
         private double _time;
+
         /// <summary>
         /// The thread-safe render queue.
         /// </summary>
         private ConcurrentQueue<Action> _renderQueue;
+
         /// <summary>
         /// Invoked when a UI element's rendering event occurs.
         /// </summary>
         private event Action Rendering;
+
+        /// <summary>
+        /// A helper object that allows checking key and mouse button states without context switching.
+        /// </summary>
+        private InputDeviceHelper _inputHelper;
+
+        /// <summary>
+        /// The width of the window.
+        /// </summary>
+        public int Width => _width;
+
+        /// <summary>
+        /// The height of the window.
+        /// </summary>
+        public int Height => _height;
+
+        /// <summary>
+        /// The title of the window.
+        /// </summary>
+        private string _title;
+
+        /// <summary>
+        /// The title of the window.
+        /// </summary>
+        public string Title
+        {
+            get => _title;
+            set
+            {
+                _title = value;
+                if (_uiThread != null)
+                {
+                    _uiDispatcher.InvokeAsync(() =>
+                    {
+                        _window.Title = _title;
+                    });
+                }
+            }
+        }
+
+        /// <summary>
+        /// The maximim positive value that can be shown in either direction on the graph.
+        /// </summary>
+        public double Range => _range;
 
         /// <summary>
         /// The color of the strokes drawn onto the chart.
@@ -172,10 +270,13 @@ namespace SGL
             {
                 _backgroundBrush = new SolidColorBrush(value);
                 _backgroundBrush.Freeze();
-                _uiDispatcher.InvokeAsync(() =>
+                if (_uiThread != null)
                 {
-                    _window.Background = _backgroundBrush;
-                });
+                    _uiDispatcher.InvokeAsync(() =>
+                    {
+                        _window.Background = _backgroundBrush;
+                    });
+                }
             }
         }
 
@@ -211,18 +312,17 @@ namespace SGL
         /// </summary>
         /// \code
         /// // Example usage
-        /// Window g = new Window(range: 5);
         /// Point pt = new Point(0, 1);
-        /// while (true) 
+        /// while (!w.Closed) 
         /// {
         ///     // Erase the previously-drawn point (if any).
-        ///     g.Erase(pt);
+        ///     w.Erase(pt);
         ///     // Moves the point upwards by 1 unit per seconds (regardless of framerate)
         ///     pt += 2 * Point.Up * g.DeltaTime;
         ///     // Draws the new point.
-        ///     g.Draw(pt);
+        ///     w.Draw(pt);
         ///     // Waits for the screen to update (1 frame).
-        ///     g.WaitForUpdate();
+        ///     w.WaitForUpdate();
         /// }
         /// \endcode
         public double DeltaTime => _deltaTime;
@@ -236,26 +336,21 @@ namespace SGL
         /// \code
         /// // Example usage
         /// double prevTime = 0;
-        /// while (true) 
+        /// while (!w.Closed) 
         /// {   
         ///     // Will draw the graph of Sin(x) that will
         ///     // be displaced every frame by a given value 
         ///     // and create a wave-like effect.
-        ///     g.Draw(x => Math.Sin(x + g.Time);
+        ///     w.Draw(x => Math.Sin(x + g.Time);
         ///     // Erase the previous such graph so that the two don't overlap. 
-        ///     g.Erase(x => Math.Sin(x + prevTime);
+        ///     w.Erase(x => Math.Sin(x + prevTime);
         ///     // Save the latest value of this parameter.
         ///     prevTime = g.Time;
         ///     // Wait for the screen to update.
-        ///     g.WaitForUpdate();
+        ///     w.WaitForUpdate();
         /// }
         /// \endcode
         public double Time => _time;
-
-        /// <summary>
-        /// The minimum range of values that can be represented on both Ox-> or Oy->.
-        /// </summary>
-        public double Range => Math.Min(_xMax, _yMax);
 
         /// <summary>
         /// Whether the user has requested the window to be closed.
@@ -263,13 +358,9 @@ namespace SGL
         public bool Closed { get; private set; } = false;
 
         /// <summary>
-        /// Creates a new window that can be drawn to.
+        /// Creates a new window with the default configuration.
         /// </summary>
-        /// <param name="title">The title of the window.</param>
-        /// <param name="range">The minimum value that can be represented on the chart.</param>
-        /// <param name="width">The width of the window.</param>
-        /// <param name="height">The height of the window.</param>
-        public Window(double range, string title = "Main Window", double width = 800, double height = 640)
+        public Window(double range = 10.0, int width = 800, int height = 640)
         {
             _width = width;
             _height = height;
@@ -277,18 +368,20 @@ namespace SGL
             _fontSizeScale = 1.0;
             _targetFramerate = 30;
             _deltaTime = 1.0;
+            _range = range;
+            _title = "SGL Window";
             _strokeBrush = Brushes.DarkCyan;
             _backgroundBrush = Brushes.White;
             _fillBrush = Brushes.Transparent;
             _renderQueue = new ConcurrentQueue<Action>();
 
-            InitializeUI(range, title, width, height);
+            Initialize();
         }
 
         /// <summary>
         /// Initializes the UI thread, creates the window and shows it.
         /// </summary>
-        private void InitializeUI(double range, string title, double width, double height)
+        private void Initialize()
         {
             var tcs = new TaskCompletionSource<object>();
             _uiThread = new Thread(() =>
@@ -300,15 +393,15 @@ namespace SGL
 
                     _window = new System.Windows.Window
                     {
-                        Title = title,
-                        Width = width,
-                        Height = height,
+                        Title = _title,
+                        Width = _width,
+                        Height = _height,
                         ResizeMode = ResizeMode.CanMinimize,
                         WindowStartupLocation = WindowStartupLocation.CenterScreen,
                     };
 
                     var canvasTransform = new ScaleTransform(1.0, 1.0);
-                    _canvas = new System.Windows.Controls.Canvas
+                    _canvas = new Canvas
                     {
                         LayoutTransform = canvasTransform,
                     };
@@ -317,13 +410,13 @@ namespace SGL
                     _window.MouseWheel += OnMouseWheel;
                     _window.ContentRendered += delegate
                     {
-                            // Save the actual (WPF) dimensions of the canvas element.
-                            _actualWidth = _canvas.ActualWidth;
+                        // Save the actual (WPF) dimensions of the canvas element.
+                        _actualWidth = _canvas.ActualWidth;
                         _actualHeight = _canvas.ActualHeight;
-                            // Set the maximum X and Y values that can be depicted on the canvas according to the range
-                            // set by the user.
-                            _xMax = _actualWidth <= _actualHeight ? range : _actualWidth / _actualHeight * range;
-                        _yMax = _actualWidth >= _actualHeight ? range : _actualHeight / _actualWidth * range;
+                        // Set the maximum X and Y values that can be depicted on the canvas according to the range
+                        // set by the user.
+                        _xMax = _actualWidth <= _actualHeight ? _range : _actualWidth / _actualHeight * _range;
+                        _yMax = _actualWidth >= _actualHeight ? _range : _actualHeight / _actualWidth * _range;
                         tcs.SetResult(null);
                     };
                     _window.Closing += delegate
@@ -332,7 +425,9 @@ namespace SGL
                         _application.Shutdown(0);
                     };
 
+                    _inputHelper = new InputDeviceHelper(_window);
                     CompositionTarget.Rendering += OnCompositionTargetRendering;
+
                     _application.Run(_window);
                 }
                 catch (Exception e)
@@ -354,6 +449,61 @@ namespace SGL
             }
         }
 
+        /// <summary>
+        /// Bound to the mouse wheel event. Scales the window accordingly to the user's scrolling of the wheel.
+        /// </summary>
+        private void OnMouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            var delta = e.Delta / 120.0;
+            var multiplier = 1.0 + delta * 0.05;
+
+            var newWidth = _canvas.ActualWidth * multiplier + (_window.Width - _canvas.ActualWidth);
+            var newHeight = _canvas.ActualHeight * multiplier + (_window.Height - _canvas.ActualHeight);
+
+            bool windowTooSmall = newWidth <= 320 || newHeight <= 240;
+            bool windowTooBig = SystemParameters.WorkArea.Width <= newWidth || SystemParameters.WorkArea.Height <= newHeight;
+            if (windowTooSmall || windowTooBig)
+            {
+                return;
+            }
+
+            _window.Width = newWidth;
+            _window.Height = newHeight;
+            var scaleTransform = _canvas.LayoutTransform as ScaleTransform;
+            scaleTransform.ScaleX += delta * 0.05;
+            scaleTransform.ScaleY += delta * 0.05;
+        }
+
+        #region Window Controls 
+
+        /// <summary>
+        /// Shows the window.
+        /// </summary>
+        public void Show()
+        {
+            _uiDispatcher.Invoke(() => _window.Show());
+        }
+
+        /// <summary>
+        /// Hides the window.
+        /// </summary>
+        public void Hide()
+        {
+            _uiDispatcher.Invoke(() => _window.Hide());
+        }
+
+        /// <summary>
+        /// Closes the window.
+        /// </summary>
+        public void Close()
+        {
+            _uiDispatcher.Invoke(() => _window.Close());
+        }
+
+        #endregion Window Controls
+
+        #region Rendering
+
         private void OnCompositionTargetRendering(object sender, EventArgs e)
         {
             _uiDispatcher.InvokeAsync(() =>
@@ -371,36 +521,78 @@ namespace SGL
             }
         }
 
+        #endregion Rendering
+
+        #region Time
+
         /// <summary>
-        /// Shows the console window.
+        /// Waits for the user to manually close the window.
         /// </summary>
-        public static void ShowConsole()
+        public void WaitForExit()
         {
-            IntPtr hConsole = NativeMethods.GetConsoleWindow();
-            if (hConsole != IntPtr.Zero)
+            _uiThread.Join();
+        }
+
+        /// <summary>
+        /// Waits a number of seconds.
+        /// </summary>
+        public void WaitForSeconds(double seconds)
+        {
+            if (seconds > 0)
             {
-                NativeMethods.ShowWindow(hConsole, NativeMethods.SW_SHOW);
+                Thread.Sleep((int)(seconds * 1000.0));
             }
         }
 
         /// <summary>
-        /// Hides the console window.
+        /// Waits for the CompositionTarget.Rendering event to occur.
         /// </summary>
-        public static void HideConsole()
+        /// <param name="timeout"></param>
+        private void WaitForRendering(int timeout)
         {
-            IntPtr hConsole = NativeMethods.GetConsoleWindow();
-            if (hConsole != IntPtr.Zero)
+            var tcs = new TaskCompletionSource<object>();
+            Action action = null;
+            action = () => tcs.TrySetResult(null);
+            Rendering += action;
+            try
             {
-                NativeMethods.ShowWindow(hConsole, NativeMethods.SW_HIDE);
+                tcs.Task.Wait(timeout);
+            }
+            finally
+            {
+                Rendering -= action;
             }
         }
+
+        /// <summary>
+        /// Waits for the screen to be updates. (Waits a single frame.)
+        /// </summary>
+        public void WaitForUpdate()
+        {
+            int targetFrameTime = (int)(1000.0 / _targetFramerate);
+            var st = new Stopwatch();
+            st.Start();
+            WaitForRendering(targetFrameTime);
+            var additionalSleep = targetFrameTime - (int)st.ElapsedMilliseconds;
+            if (additionalSleep > 0)
+            {
+                Thread.Sleep(additionalSleep);
+            }
+            st.Stop();
+            _deltaTime = st.ElapsedMilliseconds / 1000.0;
+            _time += _deltaTime;
+        }
+
+        #endregion Time
+
+        #region User Input
 
         /// <summary>
         /// Checks if the specified key is currently pressed.
         /// </summary>
         public bool IsKeyDown(Key key)
         {
-            return _uiDispatcher.Invoke(() => Keyboard.IsKeyDown(key), DispatcherPriority.Send);
+            return _inputHelper.IsKeyDown(key);
         }
 
         /// <summary>
@@ -408,23 +600,7 @@ namespace SGL
         /// </summary>
         public bool IsMouseButtonDown(MouseButton button)
         {
-            return _uiDispatcher.Invoke(() =>
-            {
-                switch (button)
-                {
-                    case MouseButton.Left:
-                        return Mouse.LeftButton == MouseButtonState.Pressed;
-                    case MouseButton.Right:
-                        return Mouse.RightButton == MouseButtonState.Pressed;
-                    case MouseButton.Middle:
-                        return Mouse.MiddleButton == MouseButtonState.Pressed;
-                    case MouseButton.XButton1:
-                        return Mouse.XButton1 == MouseButtonState.Pressed;
-                    case MouseButton.XButton2:
-                        return Mouse.XButton2 == MouseButtonState.Pressed;
-                }
-                return false;
-            }, DispatcherPriority.Send);
+            return _inputHelper.IsMouseButtonDown(button);
         }
 
         /// <summary>
@@ -476,71 +652,6 @@ namespace SGL
                 _uiDispatcher.InvokeAsync(() => Mouse.OverrideCursor = null);
             }
             return p;
-        }
-
-        /// <summary>
-        /// Bound to the mouse wheel event. Scales the window accordingly to the user's scrolling of the wheel.
-        /// </summary>
-        private void OnMouseWheel(object sender, MouseWheelEventArgs e)
-        {
-            var delta = e.Delta / 120.0;
-            var multiplier = 1.0 + delta * 0.05;
-
-            var newWidth = _canvas.ActualWidth * multiplier + (_window.Width - _canvas.ActualWidth);
-            var newHeight = _canvas.ActualHeight * multiplier + (_window.Height - _canvas.ActualHeight);
-
-            bool windowTooSmall = newWidth <= 320 || newHeight <= 240;
-            bool windowTooBig = SystemParameters.WorkArea.Width <= newWidth || SystemParameters.WorkArea.Height <= newHeight;
-            if (windowTooSmall || windowTooBig)
-            {
-                return;
-            }
-
-            _window.Width = newWidth;
-            _window.Height = newHeight;
-            var scaleTransform = _canvas.LayoutTransform as ScaleTransform;
-            scaleTransform.ScaleX += delta * 0.05;
-            scaleTransform.ScaleY += delta * 0.05;
-        }
-
-        /// <summary>
-        /// Shows the window.
-        /// </summary>
-        public void Show()
-        {
-            _uiDispatcher.Invoke(() => _window.Show());
-        }
-
-        /// <summary>
-        /// Hides the window.
-        /// </summary>
-        public void Hide()
-        {
-            _uiDispatcher.Invoke(() => _window.Hide());
-        }
-
-        /// <summary>
-        /// Closes the window.
-        /// </summary>
-        public void Close()
-        {
-            _uiDispatcher.Invoke(() => _window.Close());
-        }
-
-        /// <summary>
-        /// Clears the content of the chart.
-        /// </summary>
-        public void Clear()
-        {
-            AddToRenderQueue(dc => _canvas.Children.Clear());
-        }
-
-        /// <summary>
-        /// Waits for the user to manually close the window.
-        /// </summary>
-        public void WaitForExit()
-        {
-            _uiThread.Join();
         }
 
         /// <summary>
@@ -660,6 +771,10 @@ namespace SGL
         {
             Input.SelectOne(_application, message, new[] { "OK" }, 0);
         }
+
+        #endregion User Input
+
+        #region Drawing
 
         /// <summary>
         /// Adds the graph of a function to the chart. The start and end of the values along the X-axis can also be specified.
@@ -875,54 +990,16 @@ namespace SGL
         }
 
         /// <summary>
-        /// Waits a number of seconds.
+        /// Clears the content of the chart.
         /// </summary>
-        public void WaitForSeconds(double seconds)
+        public void Clear()
         {
-            if (seconds > 0)
-            {
-                Thread.Sleep((int)(seconds * 1000.0));
-            }
+            AddToRenderQueue(dc => _canvas.Children.Clear());
         }
 
-        /// <summary>
-        /// Waits for the CompositionTarget.Rendering event to occur.
-        /// </summary>
-        /// <param name="timeout"></param>
-        private void WaitForRendering(int timeout)
-        {
-            var tcs = new TaskCompletionSource<object>();
-            Action action = null;
-            action = () => tcs.TrySetResult(null);
-            Rendering += action;
-            try
-            {
-                tcs.Task.Wait(timeout);
-            }
-            finally
-            {
-                Rendering -= action;
-            }
-        }
+        #endregion Drawing
 
-        /// <summary>
-        /// Waits for the screen to be updates. (Waits a single frame.)
-        /// </summary>
-        public void WaitForUpdate()
-        {
-            int targetFrameTime = (int)(1000.0 / _targetFramerate);
-            var st = new Stopwatch();
-            st.Start();
-            WaitForRendering(targetFrameTime);
-            var additionalSleep = targetFrameTime - (int)st.ElapsedMilliseconds;
-            if (additionalSleep > 0)
-            {
-                Thread.Sleep(additionalSleep);
-            }
-            st.Stop();
-            _deltaTime = st.ElapsedMilliseconds / 1000.0;
-            _time += _deltaTime;
-        }
+        #region Drawing Implementation
 
         /// <summary>
         /// Adds a label to the canvas. Must be run on the UI thread and should not be called directly.
@@ -959,8 +1036,8 @@ namespace SGL
                     break;
             }
 
-            System.Windows.Controls.Canvas.SetLeft(s, TransformX(t.Position.X) - s.DesiredSize.Width / 2 + offsetX);
-            System.Windows.Controls.Canvas.SetTop(s, TransformY(t.Position.Y) - s.DesiredSize.Height / 2 + offsetY);
+            Canvas.SetLeft(s, TransformX(t.Position.X) - s.DesiredSize.Width / 2 + offsetX);
+            Canvas.SetTop(s, TransformY(t.Position.Y) - s.DesiredSize.Height / 2 + offsetY);
             _canvas.Children.Add(s);
         }
 
@@ -1001,8 +1078,8 @@ namespace SGL
                 Fill = dc.Fill,
             };
 
-            System.Windows.Controls.Canvas.SetLeft(s, TransformX(r.Left));
-            System.Windows.Controls.Canvas.SetTop(s, TransformY(r.Top));
+            Canvas.SetLeft(s, TransformX(r.Left));
+            Canvas.SetTop(s, TransformY(r.Top));
             _canvas.Children.Add(s);
         }
 
@@ -1112,5 +1189,8 @@ namespace SGL
         {
             return _actualHeight / 2.0 - y * _actualHeight / 2.0 / _yMax;
         }
+
+        #endregion Drawing Implementation
+
     }
 }

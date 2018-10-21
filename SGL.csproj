@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Ellipse.cs" />
+    <Compile Include="InputDeviceHelper.cs" />
     <Compile Include="Utils.cs" />
     <Compile Include="Window.cs" />
     <Compile Include="GridInputWindow.cs" />
