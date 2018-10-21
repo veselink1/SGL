@@ -31,15 +31,17 @@ class Program
 {
   static void Main(string[] args)
   {
-    var g = new Window(range: 5, title: "My Graph");
-    g.StrokeColor = Colors.Indigo;
+    var w = new Window(+5.0);
+    w.StrokeColor = Colors.Indigo;
     
-    g.Draw(x => Math.Sin(x));
-    g.Draw(new Label(Math.PI / 2, 1, "pi/2"));
+    w.Draw(x => Math.Sin(x));
+    w.Draw(new Label(Math.PI / 2, 1, "pi/2"));
     
-    g.WaitForExit();
+    w.WaitForExit();
   }
 }
 
 ```
+### See more examples [here](https://github.com/veselink1/SGL/tree/master/examples).
+
 ### TODO: Add more examples
