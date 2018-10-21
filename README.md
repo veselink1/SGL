@@ -1,5 +1,5 @@
 # SGL
-A Simple Graphing Library for creating simple and fun little applications by using mathematical primitives.
+A Simple Graphics Library for creating simple and fun little applications by using mathematical primitives.
 
 See the [official documentation](https://veselink1.github.io/SGL-Docs/annotated.html) for more information.
 
