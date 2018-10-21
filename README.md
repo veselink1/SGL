@@ -34,9 +34,9 @@ class Program
     var w = new Window(+5.0);
     w.StrokeColor = Colors.Indigo;
     
-    double param = w.ReadDouble("Enter a value for 'a' in the expression cos(a*x): ");
-    w.Draw(x => Math.Cos(a * x));
-    w.Draw(new Label(0, 1, "cos(a*x)"));
+    double param = w.ReadDouble("Enter a value for 'm' in the expression cos(m*x): ");
+    w.Draw(x => Math.Cos(m * x));
+    w.Draw(new Label(0, 1, "cos(m*x)"));
     
     w.WaitForExit();
   }
