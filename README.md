@@ -1,7 +1,7 @@
 # SGL
 A Simple Graphics Library for creating simple and fun little applications by using mathematical primitives.
 
-See the [documentation](https://veselink1.github.io/SGL-Docs/annotated.html) for more information.
+See the [documentation](https://veselink1.github.io/SGL-Docs/namespace_s_g_l.html) for more information.
 
 ## Instructions for use
 These instructions assume you are familiar with and using Visual Studio. 
